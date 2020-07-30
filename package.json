@@ -1,5 +1,5 @@
 {
-  "name": "@gdmgent/vuepress-theme-artevelde",
+  "name": "@artevelde/vuepress-theme-artevelde",
   "version": "0.9.0",
   "description": "VuePress theme for Artevelde University of Applied Sciences.",
   "main": "index.js",
