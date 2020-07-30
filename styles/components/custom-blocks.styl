@@ -1,0 +1,113 @@
+.custom-block
+  .custom-block-title
+    font-weight 600
+    margin-bottom -0.4rem
+  &.tip, &.warning, &.danger
+    padding .1rem 1.5rem
+    border-left-width .5rem
+    border-left-style solid
+    margin 1rem 0
+  &.tip
+    background-color #f3f5f7
+    border-color #42b983
+  &.warning
+    background-color rgba(255,229,100,.3)
+    border-color darken(#ffe564, 35%)
+    color darken(#ffe564, 70%)
+    .custom-block-title
+      color darken(#ffe564, 50%)
+    a
+      color $textColor
+  &.danger
+    background-color #ffe6e6
+    border-color darken(red, 20%)
+    color darken(red, 70%)
+    .custom-block-title
+      color darken(red, 40%)
+    a
+      color $textColor
+  &.details
+    display block
+    position relative
+    border-radius 2px
+    margin 1.6em 0
+    padding 1.6em
+    background-color #eee
+    h4
+      margin-top 0
+    figure, p
+      &:last-child
+        margin-bottom 0
+        padding-bottom 0
+    summary
+      outline none
+      cursor pointer
+
+.custom-block
+  box-shadow 2px 2px 10px 0 rgba(0, 0, 0, .25)
+  .custom-block-title
+    font-size: 1.25rem
+  &.-primary, &.-secondary, &.-info, &.-tip, &.-danger, &.-warning
+    background-color var(--color-light, $ahs-black)
+    border: 1px solid var(--color, $ahs-black)
+    border-left-width .5rem
+    color var(--color)
+    margin 1rem 0
+    padding .1rem 1.5rem
+    .custom-block-title
+      color inherit
+    a
+      color var(--color-dark, darken($ahs-black, 20%))
+  &.-primary
+    --color $ahs-black
+    --color-dark lighten($ahs-black, 60%)
+    --color-light lighten($ahs-black, 90%)
+  &.-secondary
+    --color lighten($ahs-black, 60%)
+    --color-dark lighten($ahs-black, 40%)
+    --color-light lighten($ahs-black, 90%)
+  &.-tip
+    --color $ahs-green
+    --color-dark darken($ahs-green, 30%)
+    --color-light lighten($ahs-green, 90%)
+  &.-warning
+    --color $ahs-orange
+    --color-dark darken($ahs-orange, 20%)
+    --color-light lighten($ahs-orange, 90%)
+  &.-danger
+    --color $ahs-red
+    --color-dark darken($ahs-red, 30%)
+    --color-light lighten($ahs-red, 93%)
+  &.-info
+    --color $ahs-blue
+    --color-dark darken($ahs-blue, 30%)
+    --color-light lighten($ahs-blue, 90%)
+  &.-icon
+    position relative
+    > *
+      margin-left 2rem
+    .custom-block-title
+      .fab
+        font-weight normal
+      .fas, .fab, .fa-fw
+        font-size 1.5em
+        left .625rem
+        position absolute
+        top 1.4rem
+  &.-file
+    background-color lighten($codeBgColor, 20%)
+    border none
+    border-radius 6px
+    box-shadow none
+    margin 1.25rem 0
+    .custom-block-title
+      color white
+      font-family 'Source Code Pro', monospace
+      font-size .75rem
+      font-weight normal
+      line-height 2
+      margin 0
+      opacity .75
+      padding-left 1rem
+    pre
+      margin 0

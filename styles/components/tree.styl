@@ -1,0 +1,75 @@
+$CONTENT_END = '├── ' '└── '
+$CONTENT_SPACE = '│   ' '    '
+$LEVELS = 6
+$SELECTOR_PART = ' > ul > li'
+$SYMBOL_END   = \├ \└
+$SYMBOL_SPACE = \│ \_
+
+tree-content($string)
+  $return = ''
+  for $character in split('', $string)
+    if $character == $SYMBOL_END[1]
+      $return = $return + $CONTENT_END[1]
+    else if $character == $SYMBOL_END[0]
+      $return = $return + $CONTENT_END[0]
+    else if $character == $SYMBOL_SPACE[0]
+      $return = $return + $CONTENT_SPACE[0]
+    else if $character == $SYMBOL_SPACE[1]
+      $return = $return + $CONTENT_SPACE[1]
+  return $return
+
+tree-selector($string)
+  $return = ''
+  for $character in split('', $string)
+    if $character == $SYMBOL_END[1]
+      $return += $SELECTOR_PART + ':last-child'
+    else if $character == $SYMBOL_END[0]
+      $return += $SELECTOR_PART
+    else if $character == $SYMBOL_SPACE[0]
+      $return += $SELECTOR_PART
+    else if $character == $SYMBOL_SPACE[1]
+      $return += $SELECTOR_PART + ':last-child'
+  return $return
+
+.file-tree
+  ul
+    color black
+    font-family $fontFamilyCode
+    font-weight normal
+    line-height 1.125rem
+    margin 0
+    padding-left 0
+    &:last-child
+      padding-bottom 0
+  > ul
+    margin 1rem 0 1rem 2rem
+    > li
+      font-weight bold
+  li
+    list-style none
+    margin-left 0
+    padding 0
+    &::before
+      opacity .5
+      white-space pre
+    em
+      float right
+      opacity .4
+      width: 60%
+    $list = $SYMBOL_END
+    for $item in $SYMBOL_END
+      $string = $item
+      &{tree-selector($string)}
+        &::before
+          content tree-content($string)
+    for $level in 1..$LEVELS
+      $list-new = ()
+      for $item in $list
+        for $add in $SYMBOL_SPACE
+          $string = $add + $item
+          {tree-selector($string)}
+            &::before
+              content tree-content($string)
+          push($list-new, $string)
+          $string = join('', $list-new)
+      $list = $list-new

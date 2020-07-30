@@ -1,0 +1,29 @@
+.page
+  .theme-default-content:not(.custom)
+  .page-nav
+    max-width 60em
+  counter-reset page-h2
+  h2, h3, h4
+    &::before
+      color: $ahs-purple
+      padding-right .5rem
+  h2
+    counter-increment page-h2
+    counter-reset page-h3
+    &::before
+      content counter(page-h2)
+  h3
+    counter-increment page-h3
+    counter-reset page-h4
+    &::before
+      content counter(page-h2) "." counter(page-h3)
+  h4
+    counter-increment page-h4
+    counter-reset page-h5
+    &::before
+      content counter(page-h2) "." counter(page-h3) "." counter(page-h4)
+  h5, h6
+    color $ahs-purple
+@media print
+  .page
+    padding-left 0
