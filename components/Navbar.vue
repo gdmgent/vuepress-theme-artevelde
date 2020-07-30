@@ -3,9 +3,8 @@
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
     <RouterLink :to="$localePath" class="home-link">
       <img
-        v-if="$site.themeConfig.logo"
         class="logo xx"
-        :src="$withBase($site.themeConfig.logo)"
+        src="https://www.gdm.gent/vuepress-theme-artevelde/artevelde__icon--white.svg"
         :alt="$siteTitle"
       />
       <span
@@ -13,8 +12,7 @@
         ref="siteName"
         class="site-name"
         :class="{ 'can-hide': $site.themeConfig.logo }"
-        >{{ $siteTitle }}</span
-      >
+      >{{ $siteTitle }}</span>
     </RouterLink>
 
     <div
@@ -28,12 +26,7 @@
       "
     >
       <NavLinks class="can-hide" />
-      <SearchBox
-        v-else-if="
-          $site.themeConfig.search !== false &&
-          $page.frontmatter.search !== false
-        "
-      />
+      <SearchBox v-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
     </div>
   </header>
 </template>
