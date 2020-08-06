@@ -8,7 +8,9 @@
   },
   "author": "Olivier Parent <olivier.parent@arteveldehs.be>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap-icons": "^1.0.0-alpha5"
+  },
   "devDependencies": {},
   "repository": {
     "type": "git",

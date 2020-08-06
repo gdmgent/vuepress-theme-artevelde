@@ -1,5 +1,3 @@
-@require './config'
-
 @require './components/arrow'
 @require './components/button'
 @require './components/code'
@@ -7,7 +5,6 @@
 @require './components/footnotes'
 @require './components/keyboard'
 @require './components/list'
-@require './components/navbar'
 @require './components/page'
 @require './components/sidebar'
 @require './components/table'
@@ -15,16 +12,21 @@
 @require './components/tree'
 @require './components/wrapper'
 
-html, body
-  background-color #fff
-  margin 0
-  padding 0
+:root
+  font-size 16px
+
+html
+  overflow-y:scroll;
 
 body
   -moz-osx-font-smoothing grayscale
   -webkit-font-smoothing antialiased
   color $textColor
-  font-size 16px
+
+html, body
+  background-color #fff
+  margin 0
+  padding 0
 
 .page
   padding-left $sidebarWidth
@@ -144,6 +146,9 @@ th, td
   border 1px solid #dfe2e5
   padding .6em 1em
 
+abbr[title]
+  cursor help
+
 .theme-container
   &.sidebar-open
     .sidebar-mask
@@ -156,6 +161,9 @@ th, td
 
     .sidebar
       top 0
+  .icon.outbound
+    color: inherit;
+    opacity .5;
 
 @media (min-width: ($MQMobile + 1px))
   .theme-container.no-sidebar

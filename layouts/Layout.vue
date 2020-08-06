@@ -43,9 +43,9 @@ export default {
 
   components: {
     Home,
+    Navbar,
     Page,
     Sidebar,
-    Navbar,
   },
 
   data() {
@@ -93,8 +93,8 @@ export default {
       return [
         {
           "no-navbar": !this.shouldShowNavbar,
-          "sidebar-open": this.isSidebarOpen,
           "no-sidebar": !this.shouldShowSidebar,
+          "sidebar-open": this.isSidebarOpen,
         },
         userPageClass,
       ];

@@ -1,48 +1,38 @@
 <template>
   <header class="navbar">
-    <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
-    <RouterLink :to="$localePath" class="home-link">
+    <SidebarButton class="navbar-item" @toggle-sidebar="$emit('toggle-sidebar')" />
+    <RouterLink class="navbar-item home-link" :to="$localePath">
       <img
-        class="logo xx"
+        class="logo"
         src="https://www.gdm.gent/vuepress-theme-artevelde/artevelde__icon--white.svg"
         :alt="$siteTitle"
       />
       <span
         v-if="$siteTitle"
         ref="siteName"
-        class="site-name"
-        :class="{ 'can-hide': $site.themeConfig.logo }"
+        :class="['site-name', { 'can-hide': $site.themeConfig.logo }]"
       >{{ $siteTitle }}</span>
     </RouterLink>
-
-    <div
-      class="links"
-      :style="
-        linksWrapMaxWidth
-          ? {
-              'max-width': linksWrapMaxWidth + 'px',
-            }
-          : {}
-      "
-    >
-      <NavLinks class="can-hide" />
-      <SearchBox v-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
-    </div>
+    <SearchBox
+      class="navbar-item"
+      v-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"
+    />
+    <NavLinks class="navbar-item can-hide" />
   </header>
 </template>
 
 <script>
 import SearchBox from "@SearchBox";
-import SidebarButton from "@theme/components/SidebarButton.vue";
 import NavLinks from "@theme/components/NavLinks.vue";
+import SidebarButton from "@theme/components/SidebarButton.vue";
 
 export default {
   name: "Navbar",
 
   components: {
-    SidebarButton,
     NavLinks,
     SearchBox,
+    SidebarButton,
   },
 
   data() {
@@ -51,7 +41,7 @@ export default {
     };
   },
 
-  computed: {},
+  methods: {},
 
   mounted() {
     const MOBILE_DESKTOP_BREAKPOINT = 719; // refer to config.styl
@@ -83,66 +73,128 @@ function css(el, property) {
 
 <style lang="stylus">
 $navbar-vertical-padding = 0.7rem;
-$navbar-horizontal-padding = 1.5rem;
+$navbar-horizontal-padding = 1rem;
 
 .navbar {
-  padding: $navbar-vertical-padding $navbar-horizontal-padding;
-  line-height: $navbarHeight - 1.4rem;
+  background-color: $navbarBgColor;
+  box-sizing: border-box;
+  color: $navbarColor;
+  display: flex;
+  left: 0;
+  min-height: $navbarHeight;
+  padding: 0 $navbar-horizontal-padding;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99;
 
   a, span, img {
     display: inline-block;
   }
 
+  .navbar-item {
+    align-items: center;
+    display: flex;
+  }
+
   .logo {
-    height: $navbarHeight - 1.4rem;
-    min-width: $navbarHeight - 1.4rem;
-    margin-right: 0.8rem;
-    vertical-align: top;
+    height: 1rem;
+    margin-right: 0.3rem;
+  }
+
+  .home-link {
+    margin: 0.5rem auto 0.5rem 0;
+    padding: 0 0.5rem;
+    overflow: hidden;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+    }
+  }
+
+  .nav-links {
+    align-items: center;
+    color: $navbarColor;
+
+    a:hover {
+      border-bottom-color: white;
+    }
+
+    a:hover, .router-link-active {
+      color: white;
+    }
+
+    .nav-link {
+      white-space: nowrap;
+    }
+  }
+
+  .search-box {
+    align-items: center;
+    cursor: text;
+    flex: 0 0 auto;
+
+    &::before {
+      $size = 1rem;
+      --icon: url('https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/icons/search.svg');
+      background-color: white;
+      background-attachment: fixed;
+      background-repeat: none;
+      content: '';
+      display: block;
+      height: $size;
+      left: 0.5rem;
+      -webkit-mask-image: var(--icon);
+      mask-image: var(--icon);
+      opacity: 0.5;
+      pointer-events: none;
+      position: absolute;
+      width: $size;
+    }
+
+    &:focus-within {
+      &::before {
+        background-color: $ahs-purple;
+        opacity: 1;
+      }
+    }
+
+    input {
+      color: white;
+      background: rgba(0, 0, 0, 0.1);
+      border: none;
+      position: static;
+
+      &:focus {
+        background-color: $ahs-white;
+        color: $ahs-purple;
+      }
+    }
   }
 
   .site-name {
-    font-size: 1.3rem;
+    color: $navbarColor;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: $textColor;
-    position: relative;
-  }
-
-  .links {
-    padding-left: 1.5rem;
-    box-sizing: border-box;
-    background-color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
     white-space: nowrap;
-    font-size: 0.9rem;
-    position: absolute;
-    right: $navbar-horizontal-padding;
-    top: $navbar-vertical-padding;
-    display: flex;
-
-    .search-box {
-      flex: 0 0 auto;
-      vertical-align: top;
-    }
   }
 }
 
 @media (max-width: $MQMobile) {
   .navbar {
-    padding-left: 4rem;
-
     .can-hide {
       display: none;
     }
+  }
+}
 
-    .links {
-      padding-left: 1.5rem;
-    }
-
-    .site-name {
-      width: calc(100vw - 9.4rem);
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
+@media print {
+  .navbar {
+    display: none;
   }
 }
 </style>

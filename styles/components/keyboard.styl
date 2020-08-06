@@ -1,34 +1,39 @@
 kbd
+.keyboard-combination,
+.interface-menu
+  color #333
   background-color #f7f7f7
+  font-family $fontFamilyCode
+  font-size 11px
+  font-weight bold
+  padding .1em .5em
+
+kbd
+  text-transform capitalize
   border-color #ccc
   border-radius .25rem
   border-style solid
   border-width .15rem
   border-bottom-width .25rem
-  color #333
   display inline-block
-  font-family $fontFamilyCode
-  font-size 11px
-  font-weight: bold
   line-height 1.4
   margin .1em
-  padding .1em .5em
   position relative
   white-space nowrap
-  &.keyboard,
-  &.menu
-    border 1px solid #efefef
-    border-radius 0
-    box-shadow none
-    color#666
-  &.keyboard
-    background-color rgba(27, 31, 35, .05);
-    border none
-  &.menu
-    kbd
-      border none
-      border-radius 0
-      box-shadow none
+  // &.keyboard,
+  // &.menu
+  //   border 1px solid #efefef
+  //   border-radius 0
+  //   box-shadow none
+  //   color#666
+  // &.keyboard
+  //   background-color rgba(27, 31, 35, .05);
+  //   border none
+  // &.menu
+  //   kbd
+  //     border none
+  //     border-radius 0
+  //     box-shadow none
   &.num
     background-color #444
     border-color #666
@@ -46,11 +51,7 @@ kbd
     color rgb(45, 155, 240)
   &.-m
     color rgb(218, 0, 99)
-  kbd
-    font-size inherit
-    font-weight inherit
-    padding inherit
   abbr[title]
     cursor help
     text-decoration-style dotted
-    text-decoration-color #666
+    text-decoration-color #999

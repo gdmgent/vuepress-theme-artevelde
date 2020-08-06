@@ -1,8 +1,6 @@
 <template>
   <main class="page">
     <slot name="top" />
-
-    <TestAlert displayText="z" />
     <Content class="theme-default-content" />
     <PageEdit />
 
@@ -15,7 +13,6 @@
 <script>
 import PageEdit from "@theme/components/PageEdit.vue";
 import PageNav from "@theme/components/PageNav.vue";
-import TestAlert from "@theme/components/TestAlert.vue";
 
 export default {
   components: { PageEdit, PageNav },

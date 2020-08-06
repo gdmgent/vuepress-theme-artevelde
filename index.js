@@ -2,7 +2,7 @@ const path = require("path");
 
 // Theme API.
 module.exports = (options, ctx) => {
-  const { themeConfig, siteConfig } = ctx;
+  const { themeConfig } = ctx;
   const enableSmoothScroll = themeConfig.smoothScroll === true;
 
   return {
@@ -26,8 +26,8 @@ module.exports = (options, ctx) => {
         {
           type: "file",
           before: (info) =>
-            `<div class="custom-block -file"><p class="custom-block-title"><i class="fas fa-fw fa-file-code"></i> <span>${info}</span></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="file-code" info="${info}" type="-file">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -35,8 +35,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-adobe",
           before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fab fa-fw fa-adobe"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="adobe" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -44,8 +44,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-android",
           before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fab fa-fw fa-android"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="android" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -53,8 +53,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-apple",
           before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fab fa-fw fa-apple"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="apple" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -62,8 +62,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-bad",
           before: (info) =>
-            `<div class="custom-block -danger -icon"><p class="custom-block-title"><i class="fas fa-fw fa-thumbs-down"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="thumbs-down" info="${info}" type="-danger -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -71,8 +71,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-blender",
           before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fas fa-fw fa-cube"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="cube" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -80,8 +80,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-danger",
           before: (info) =>
-            `<div class="custom-block -danger -icon"><p class="custom-block-title"><i class="fas fa-fw fa-exclamation-triangle"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="exclamation-triangle" info="${info}" type="-danger -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -89,8 +89,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-definition",
           before: (info) =>
-            `<div class="custom-block -info -icon"><p class="custom-block-title"><i class="fas fa-fw fa-star"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="star" info="${info}" type="-info -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -98,8 +98,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-info",
           before: (info) =>
-            `<div class="custom-block -info -icon"><p class="custom-block-title"><i class="fas fa-fw fa-info-circle"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="info-circle" info="${info}" type="-info -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -107,8 +107,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-female",
           before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fas fa-fw fa-female"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="female" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -116,8 +116,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-github",
           before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fab fa-fw fa-github"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="github" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -125,8 +125,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-good",
           before: (info) =>
-            `<div class="custom-block -tip -icon"><p class="custom-block-title"><i class="fas fa-fw fa-thumbs-up"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="thumbs-up" info="${info}" type="-tip -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -134,8 +134,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-ios",
           before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fab fa-fw fa-apple"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="apple" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -143,8 +143,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-ipados",
           before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fab fa-fw fa-apple"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="apple" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -152,44 +152,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-know",
           before: (info) =>
-            `<div class="custom-block -secondary -icon"><p class="custom-block-title"><i class="fas fa-fw fa-question-circle"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
-        },
-      ],
-      [
-        "container",
-        {
-          type: "icon-macos",
-          before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fab fa-fw fa-apple"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
-        },
-      ],
-      [
-        "container",
-        {
-          type: "icon-male",
-          before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fas fa-fw fa-male"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
-        },
-      ],
-      [
-        "container",
-        {
-          type: "icon-microsoft",
-          before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fab fa-fw fa-microsoft"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
-        },
-      ],
-      [
-        "container",
-        {
-          type: "icon-mouse",
-          before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fas fa-fw fa-mouse"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="question-circle" info="${info}" type="-secondary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -197,17 +161,54 @@ module.exports = (options, ctx) => {
         {
           type: "icon-linux",
           before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fab fa-fw fa-linux"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="linux" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
         "container",
         {
+          type: "icon-macos",
+          before: (info) =>
+            `<ContainerBlock icon="apple" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
+        },
+      ],
+      [
+        "container",
+        {
+          type: "icon-male",
+          before: (info) =>
+            `<ContainerBlock icon="male" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
+        },
+      ],
+      [
+        "container",
+        {
+          type: "icon-microsoft",
+          before: (info) =>
+            `<ContainerBlock icon="microsoft" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
+        },
+      ],
+      [
+        "container",
+        {
+          type: "icon-mouse",
+          before: (info) =>
+            `<ContainerBlock icon="mouse" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
+        },
+      ],
+
+      [
+        "container",
+        {
           type: "icon-quote",
           before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fas fa-fw fa-quote-left"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="quote-left" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -215,8 +216,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-raspbian",
           before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fab fa-fw fa-raspberry-pi"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="raspberry-pi" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -224,8 +225,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-linux-ubuntu",
           before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fab fa-fw fa-ubuntu"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="ubuntu" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -233,8 +234,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-see",
           before: (info) =>
-            `<div class="custom-block -tip -icon"><p class="custom-block-title"><i class="fas fa-fw fa-book-reader"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="book-reader" info="${info}" type="-tip -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -242,8 +243,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-sources",
           before: (info) =>
-            `<div class="custom-block -secondary -icon"><p class="custom-block-title"><i class="fas fa-fw fa-atlas"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="atlas" info="${info}" type="-secondary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -251,8 +252,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-task",
           before: (info) =>
-            `<div class="custom-block -warning -icon"><p class="custom-block-title"><i class="fas fa-fw fa-edit"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="edit" info="${info}" type="-warning -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -260,8 +261,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-tip",
           before: (info) =>
-            `<div class="custom-block -tip -icon"><p class="custom-block-title"><i class="fas fa-fw fa-lightbulb"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="lightbulb" info="${info}" type="-tip -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -269,8 +270,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-tree",
           before: (info) =>
-            `<div class="custom-block -primary -icon file-tree"><p class="custom-block-title"><i class="fas fa-fw fa-folder-open"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="folder-open" info="${info}" type="-primary -icon file-tree">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -278,8 +279,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-video",
           before: (info) =>
-            `<div class="custom-block -info -icon"><p class="custom-block-title"><i class="fas fa-fw fa-film"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="film" info="${info}" type="-info -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -287,8 +288,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-video-linkedin-learning",
           before: (info) =>
-            `<div class="custom-block -info -icon"><p class="custom-block-title"><i class="fab fa-fw fa-linkedin"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="linkedin" info="${info}" type="-info -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -296,8 +297,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-video-youtube",
           before: (info) =>
-            `<div class="custom-block -info -icon"><p class="custom-block-title"><i class="fab fa-fw fa-youtube"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="youtube" info="${info}" type="-info -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -305,8 +306,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-warning",
           before: (info) =>
-            `<div class="custom-block -warning -icon"><p class="custom-block-title"><i class="fas fa-fw fa-exclamation-circle"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="exclamation-circle" info="${info}" type="-warning -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [
@@ -314,8 +315,8 @@ module.exports = (options, ctx) => {
         {
           type: "icon-windows",
           before: (info) =>
-            `<div class="custom-block -primary -icon"><p class="custom-block-title"><i class="fab fa-fw fa-windows"></i> <strong>${info}</strong></p>\n`,
-          after: () => "</div>\n",
+            `<ContainerBlock icon="windows" info="${info}" type="-primary -icon">\n`,
+          after: () => "</ContainerBlock>\n",
         },
       ],
       [

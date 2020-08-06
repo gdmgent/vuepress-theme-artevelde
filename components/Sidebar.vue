@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import SidebarLinks from "@theme/components/SidebarLinks.vue";
 import NavLinks from "@theme/components/NavLinks.vue";
+import SidebarLinks from "@theme/components/SidebarLinks.vue";
 
 export default {
   name: "Sidebar",
@@ -64,6 +64,10 @@ export default {
       margin-top: 0.75rem;
     }
   }
+}
+
+.sidebar-open .sidebar {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: $MQMobile) {
