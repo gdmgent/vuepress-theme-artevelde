@@ -1,29 +1,90 @@
 .page
-  .theme-default-content:not(.custom)
-  .page-nav
-    max-width 60em
   counter-reset page-h2
+  h1, h2, h3, h4, h5, h6
+    margin-top 0
+    padding-top $navbarHeight
+    padding-top $navbarHeight
+    font-weight 600
+    line-height 1.25
+    position relative
+
+    {$contentClass}:not(.custom) > &
+      margin-top (0.5rem - $navbarHeight)
+      padding-top ($navbarHeight + 1rem)
+      margin-bottom 0
+
+      &:first-child
+        margin-top -1.5rem
+        margin-bottom 1rem
+
+        + p, + pre, + .custom-block
+          margin-top 2rem
+
+    &:hover
+      a.header-anchor
+        opacity 1
+        
+        &:hover
+          text-decoration none
+
+  a.header-anchor
+    float right
+    opacity 0
+
+  h2, h3, h4, h5, h6
+  
   h2, h3, h4
     &::before
-      color: $ahs-purple
-      padding-right .5rem
+      $margin = .5rem
+      $size = (2 * $contentPadding - $margin)
+      border-bottom 1px solid $borderColor
+      bottom 0
+      box-sizing border-box
+      color $accentColor
+      font-size 1rem
+      font-weight 400
+      left - $size
+      padding-left $margin
+      position absolute
+      width ($size - $margin)
+      @media (max-width: $MQNarrow)
+        display none
+      @media (max-width: $MQMobileNarrow)
+        display none
+
+  h1
+    font-size 2.2rem
+    margin 3rem 0 0
+
   h2
+    border-bottom 1px solid $borderColor
     counter-increment page-h2
     counter-reset page-h3
+    font-size 1.65rem
+    padding-bottom .3rem
+
     &::before
       content counter(page-h2)
+      padding-bottom .3rem
+
   h3
     counter-increment page-h3
     counter-reset page-h4
+    font-size 1.35rem
+
     &::before
       content counter(page-h2) "." counter(page-h3)
+
   h4
     counter-increment page-h4
     counter-reset page-h5
+
     &::before
       content counter(page-h2) "." counter(page-h3) "." counter(page-h4)
+
   h5, h6
-    color $ahs-purple
+    color $accentColor
+
 @media print
   .page
     padding-left 0

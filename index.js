@@ -25,8 +25,7 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "file",
-          before: (info) =>
-            `<ContainerBlock icon="file-code" info="${info}" type="-file">\n`,
+          before: (info) => `<ContainerBlock info="${info} name="file">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -34,8 +33,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-adobe",
-          before: (info) =>
-            `<ContainerBlock icon="adobe" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "Adobe",
+          before: (info) => `<ContainerBlock info="${info}" name="adobe">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -43,8 +42,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-android",
-          before: (info) =>
-            `<ContainerBlock icon="android" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "Android",
+          before: (info) => `<ContainerBlock info="${info}" name="android">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -52,8 +51,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-apple",
-          before: (info) =>
-            `<ContainerBlock icon="apple" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "Apple",
+          before: (info) => `<ContainerBlock info="${info}" name="apple">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -61,8 +60,11 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-bad",
-          before: (info) =>
-            `<ContainerBlock icon="thumbs-down" info="${info}" type="-danger -icon">\n`,
+          defaultTitle: {
+            "/": "Fout",
+            "/en/": "Bad",
+          },
+          before: (info) => `<ContainerBlock info="${info}" name="bad">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -70,8 +72,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-blender",
-          before: (info) =>
-            `<ContainerBlock icon="cube" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "Blender",
+          before: (info) => `<ContainerBlock info="${info}" name="blender">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -79,8 +81,11 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-danger",
-          before: (info) =>
-            `<ContainerBlock icon="exclamation-triangle" info="${info}" type="-danger -icon">\n`,
+          defaultTitle: {
+            "/": "Opgelet",
+            "/en/": "Warning",
+          },
+          before: (info) => `<ContainerBlock info="${info}" name="warning">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -88,8 +93,12 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-definition",
+          defaultTitle: {
+            "/": "Definitie",
+            "/en/": "Definition",
+          },
           before: (info) =>
-            `<ContainerBlock icon="star" info="${info}" type="-info -icon">\n`,
+            `<ContainerBlock info="${info}" name="definition">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -97,8 +106,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-info",
-          before: (info) =>
-            `<ContainerBlock icon="info-circle" info="${info}" type="-info -icon">\n`,
+          defaultTitle: "Info",
+          before: (info) => `<ContainerBlock info="${info}" name="info">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -106,8 +115,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-female",
-          before: (info) =>
-            `<ContainerBlock icon="female" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "Jane Doe",
+          before: (info) => `<ContainerBlock info="${info}" name="person">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -115,8 +124,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-github",
-          before: (info) =>
-            `<ContainerBlock icon="github" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "GitHub",
+          before: (info) => `<ContainerBlock info="${info}" name="github">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -124,8 +133,11 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-good",
-          before: (info) =>
-            `<ContainerBlock icon="thumbs-up" info="${info}" type="-tip -icon">\n`,
+          defaultTitle: {
+            "/": "Goed",
+            "/en/": "Good",
+          },
+          before: (info) => `<ContainerBlock info="${info}" name="good">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -133,8 +145,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-ios",
-          before: (info) =>
-            `<ContainerBlock icon="apple" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "iOS",
+          before: (info) => `<ContainerBlock info="${info}" name="apple">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -142,8 +154,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-ipados",
-          before: (info) =>
-            `<ContainerBlock icon="apple" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "iPadOS",
+          before: (info) => `<ContainerBlock info="${info}" name="apple">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -151,8 +163,11 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-know",
-          before: (info) =>
-            `<ContainerBlock icon="question-circle" info="${info}" type="-secondary -icon">\n`,
+          defaultTitle: {
+            "/": "Wist-je-datje",
+            "/en/": "Did you know?",
+          },
+          before: (info) => `<ContainerBlock info="${info}" name="know">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -160,8 +175,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-linux",
-          before: (info) =>
-            `<ContainerBlock icon="linux" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "Linux",
+          before: (info) => `<ContainerBlock info="${info}" name="linux">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -169,8 +184,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-macos",
-          before: (info) =>
-            `<ContainerBlock icon="apple" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "macOS",
+          before: (info) => `<ContainerBlock info="${info}" name="apple">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -178,8 +193,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-male",
-          before: (info) =>
-            `<ContainerBlock icon="male" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "John Doe",
+          before: (info) => `<ContainerBlock info="${info}" name="person">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -187,8 +202,9 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-microsoft",
+          defaultTitle: "Microsoft",
           before: (info) =>
-            `<ContainerBlock icon="microsoft" info="${info}" type="-primary -icon">\n`,
+            `<ContainerBlock info="${info}" name="microsoft">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -196,18 +212,32 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-mouse",
-          before: (info) =>
-            `<ContainerBlock icon="mouse" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: {
+            "/": "Muis",
+            "/en/": "Mouse",
+          },
+          before: (info) => `<ContainerBlock info="${info}" name="mouse">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
-
+      [
+        "container",
+        {
+          type: "icon-person",
+          defaultTitle: "John/Jane Doe",
+          before: (info) => `<ContainerBlock info="${info}" name="person">\n`,
+          after: () => "</ContainerBlock>\n",
+        },
+      ],
       [
         "container",
         {
           type: "icon-quote",
-          before: (info) =>
-            `<ContainerBlock icon="quote-left" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: {
+            "/": "Citaat",
+            "/en/": "Quote",
+          },
+          before: (info) => `<ContainerBlock info="${info}" name="quote">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -215,8 +245,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-raspbian",
-          before: (info) =>
-            `<ContainerBlock icon="raspberry-pi" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "Raspbian",
+          before: (info) => `<ContainerBlock info="${info}" name="raspbian">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -224,8 +254,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-linux-ubuntu",
-          before: (info) =>
-            `<ContainerBlock icon="ubuntu" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "Ubuntu",
+          before: (info) => `<ContainerBlock info="${info}" name="ubuntu">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -233,8 +263,11 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-see",
-          before: (info) =>
-            `<ContainerBlock icon="book-reader" info="${info}" type="-tip -icon">\n`,
+          defaultTitle: {
+            "/": "Zie ook",
+            "/en/": "See",
+          },
+          before: (info) => `<ContainerBlock info="${info}" name="see">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -242,8 +275,11 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-sources",
-          before: (info) =>
-            `<ContainerBlock icon="atlas" info="${info}" type="-secondary -icon">\n`,
+          defaultTitle: {
+            "/": "Geraadpleegde bronnen",
+            "/en/": "Referenced sources",
+          },
+          before: (info) => `<ContainerBlock info="${info}" name="sources">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -251,8 +287,11 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-task",
-          before: (info) =>
-            `<ContainerBlock icon="edit" info="${info}" type="-warning -icon">\n`,
+          defaultTitle: {
+            "/": "Taak",
+            "/en/": "Task",
+          },
+          before: (info) => `<ContainerBlock info="${info}" name="task">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -260,8 +299,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-tip",
-          before: (info) =>
-            `<ContainerBlock icon="lightbulb" info="${info}" type="-tip -icon">\n`,
+          defaultTitle: "Tip",
+          before: (info) => `<ContainerBlock info="${info}" name="tip">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -269,8 +308,11 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-tree",
-          before: (info) =>
-            `<ContainerBlock icon="folder-open" info="${info}" type="-primary -icon file-tree">\n`,
+          defaultTitle: {
+            "/": "Mappen & bestanden",
+            "/en/": "Folders & files",
+          },
+          before: (info) => `<ContainerBlock info="${info}" name="tree">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -278,8 +320,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-video",
-          before: (info) =>
-            `<ContainerBlock icon="film" info="${info}" type="-info -icon">\n`,
+          defaultTitle: "Video",
+          before: (info) => `<ContainerBlock info="${info}" name="video">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -287,8 +329,9 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-video-linkedin-learning",
+          defaultTitle: "LinkedIn Learning",
           before: (info) =>
-            `<ContainerBlock icon="linkedin" info="${info}" type="-info -icon">\n`,
+            `<ContainerBlock info="${info}" name="linkedin-learning">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -296,8 +339,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-video-youtube",
-          before: (info) =>
-            `<ContainerBlock icon="youtube" info="${info}" type="-info -icon">\n`,
+          defaultTitle: "YouTube",
+          before: (info) => `<ContainerBlock info="${info}" name="youtube">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -305,8 +348,11 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-warning",
-          before: (info) =>
-            `<ContainerBlock icon="exclamation-circle" info="${info}" type="-warning -icon">\n`,
+          defaultTitle: {
+            "/": "Opmerking",
+            "/en/": "Remark",
+          },
+          before: (info) => `<ContainerBlock info="${info}" name="remark">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
@@ -314,8 +360,8 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-windows",
-          before: (info) =>
-            `<ContainerBlock icon="windows" info="${info}" type="-primary -icon">\n`,
+          defaultTitle: "Windows",
+          before: (info) => `<ContainerBlock info="${info}" name="windows">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],

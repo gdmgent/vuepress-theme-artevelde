@@ -4,16 +4,34 @@
       <DropdownLink v-if="item.type === 'links'" :item="item" />
       <NavLink v-else :item="item" />
     </div>
-    <div v-if="canvasLink" class="nav-item nav-canvas nav-separator">
-      <a :href="canvasLink" class="nav-link" target="_blank" rel="noopener noreferrer">
-        Canvas
-        <OutboundLink />
+    <div v-if="canvasLink" class="nav-item nav-icon">
+      <a
+        :href="canvasLink"
+        class="nav-link nav-button"
+        target="_blank"
+        rel="noopener noreferrer"
+        :title="canvasLabel"
+      >
+        <IconBootstrap name="canvas" />
+        <span>
+          {{ canvasLabel }}
+          <OutboundLink />
+        </span>
       </a>
     </div>
-    <div v-if="repoLink" class="nav-item nav-repo">
-      <a :href="repoLink" class="nav-link" target="_blank" rel="noopener noreferrer">
-        {{ repoLabel }}
-        <OutboundLink />
+    <div v-if="canvasLink" class="nav-item nav-icon">
+      <a
+        :href="repoLink"
+        class="nav-link nav-button"
+        target="_blank"
+        rel="noopener noreferrer"
+        :title="repoLabel"
+      >
+        <IconFontAwesomeBrand name="github" />
+        <span>
+          {{ repoLabel }}
+          <OutboundLink />
+        </span>
       </a>
     </div>
   </nav>
@@ -79,12 +97,20 @@ export default {
       });
     },
 
+    canvasLabel() {
+      return this.$site.themeConfig.canvasLabel;
+    },
+
     canvasLink() {
       const { canvas } = this.$site.themeConfig;
       if (canvas) {
         return `https://arteveldehogeschool.instructure.com/courses/${canvas}`;
       }
       return null;
+    },
+
+    repoLabel() {
+      return this.$site.themeConfig.repoLabel;
     },
 
     repoLink() {
@@ -94,24 +120,6 @@ export default {
       }
       return null;
     },
-
-    repoLabel() {
-      if (!this.repoLink) return;
-      if (this.$site.themeConfig.repoLabel) {
-        return this.$site.themeConfig.repoLabel;
-      }
-
-      const repoHost = this.repoLink.match(/^https?:\/\/[^/]+/)[0];
-      const platforms = ["GitHub", "GitLab", "Bitbucket"];
-      for (let i = 0; i < platforms.length; i++) {
-        const platform = platforms[i];
-        if (new RegExp(platform, "i").test(repoHost)) {
-          return platform;
-        }
-      }
-
-      return "Source";
-    },
   },
 };
 </script>
@@ -119,6 +127,7 @@ export default {
 <style lang="stylus">
 .nav-links {
   display: inline-block;
+  margin-left: 0.5rem;
 
   a {
     color: inherit;
@@ -139,15 +148,19 @@ export default {
       margin-left: 0;
     }
   }
+}
 
-  .nav-separator {
-    margin-left: 1.5rem;
+.navbar {
+  .nav-icon {
+    span {
+      display: none;
+    }
   }
 }
 
 @media (max-width: $MQMobile) {
   .nav-links {
-    .nav-item, .nav-separator {
+    .nav-item {
       margin-left: 0;
     }
 

@@ -1,6 +1,6 @@
 <template functional>
   <a class="btn" :href="props.href">
-    <Icon v-if="props.icon" :name="props.icon" />
+    <IconBootstrap v-if="props.icon" :name="props.icon" />
     <slot />
   </a>
 </template>
@@ -25,8 +25,9 @@ a.btn {
   border-radius: 0.25em;
   padding: 0.5rem 1rem;
 
-  i:first-child {
-    padding-right: 0.5rem;
+  svg:first-child {
+    padding-right: 0.5em;
+    vertical-align: middle;
   }
 
   &:hover {
