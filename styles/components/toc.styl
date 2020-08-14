@@ -1,3 +1,31 @@
 .table-of-contents
-  .badge
-    vertical-align middle
+  background-color $subtleBgColorAlpha
+  border-left $borderWidth solid $accentColor
+  padding 1rem 1rem 1rem 1.5rem
+
+  ul
+    color $accentColor
+    counter-reset: section
+    list-style-type none
+    margin-left 1rem
+
+    li
+      &::before
+        color currentColor
+        content counters(section,".") " "
+        counter-increment section
+        display inline-block
+        min-width 2rem
+        
+  > ul
+    margin-left 0
+    padding-left 0
+    > li
+      > ul
+        > li
+          &::before
+            min-width 2.5rem
+          > ul
+            > li
+              &::before
+                min-width 3rem

@@ -101,12 +101,6 @@ export default {
     },
   },
 
-  mounted() {
-    this.$router.afterEach(() => {
-      this.isSidebarOpen = false;
-    });
-  },
-
   methods: {
     toggleSidebar(to) {
       this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
@@ -133,5 +127,25 @@ export default {
       }
     },
   },
+
+  mounted() {
+    this.$router.afterEach(() => {
+      this.isSidebarOpen = false;
+    });
+  },
 };
 </script>
+
+<style lang="stylus">
+#app, .theme-container {
+  height: inherit;
+}
+
+.theme-container {
+  --sidebarWidth: $sidebarWidth;
+
+  @media (max-width: $MQNarrow) {
+    --sidebarWidth: ($sidebarWidth * 0.85);
+  }
+}
+</style>

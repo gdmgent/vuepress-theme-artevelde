@@ -116,29 +116,29 @@ function renderExternal(h, to, text) {
 
 <style lang="stylus">
 .sidebar .sidebar-sub-headers {
-  padding-left: 1rem;
   font-size: 0.95em;
+  padding-left: 1rem;
 }
 
 a.sidebar-link {
+  border-left: 0.25rem solid transparent;
+  box-sizing: border-box;
+  color: $textColor;
+  display: inline-block;
   font-size: 1em;
   font-weight: 400;
-  display: inline-block;
-  color: $textColor;
-  border-left: 0.25rem solid transparent;
-  padding: 0.35rem 1rem 0.35rem 1.25rem;
   line-height: 1.4;
+  padding: 0.35rem 1rem 0.35rem 1.25rem;
   width: 100%;
-  box-sizing: border-box;
 
   &:hover {
     color: $accentColor;
   }
 
   &.active {
-    font-weight: 600;
-    color: $accentColor;
     border-left-color: $accentColor;
+    color: $accentColor;
+    font-weight: 600;
   }
 
   .sidebar-group & {
@@ -146,12 +146,25 @@ a.sidebar-link {
   }
 
   .sidebar-sub-headers & {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
     border-left: none;
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+  }
+}
 
-    &.active {
-      font-weight: 500;
+.sidebar-sub-headers {
+  counter-reset: section;
+}
+
+.sidebar-sub-header {
+  .sidebar-link {
+    &::before {
+      content: counter(section);
+      counter-increment: section;
+      display: inline-block;
+      min-width: 1rem;
+      padding-right: 0.5rem;
+      text-align: right;
     }
   }
 }

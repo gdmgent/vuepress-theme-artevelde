@@ -1,29 +1,44 @@
+
 .page
+  $borderWidth = 1px
+  
+  box-sizing border-box
   counter-reset page-h2
-  h1, h2, h3, h4, h5, h6
-    margin-top 0
-    padding-top $navbarHeight
-    padding-top $navbarHeight
+  display grid
+  min-height 100%
+  > *
+    grid-column-start content-start
+
+  h1
+  h2
+  h3
+  h4
+  h5
+  h6
     font-weight 600
     line-height 1.25
+    margin-top 0
+    padding-top $navbarHeight
     position relative
 
     {$contentClass}:not(.custom) > &
+      margin-bottom 0
       margin-top (0.5rem - $navbarHeight)
       padding-top ($navbarHeight + 1rem)
-      margin-bottom 0
 
       &:first-child
-        margin-top -1.5rem
         margin-bottom 1rem
+        margin-top -1.5rem
 
-        + p, + pre, + .custom-block
+        + p
+        + pre
+        + .custom-block
           margin-top 2rem
 
     &:hover
       a.header-anchor
         opacity 1
-        
+
         &:hover
           text-decoration none
 
@@ -31,14 +46,14 @@
     float right
     opacity 0
 
-  h2, h3, h4, h5, h6
-  
-  h2, h3, h4
+  h2
+  h3
+  h4
     &::before
       $margin = .5rem
       $size = (2 * $contentPadding - $margin)
-      border-bottom 1px solid $borderColor
-      bottom 0
+      border-bottom $borderWidth solid $borderColor
+      bottom - $borderWidth
       box-sizing border-box
       color $accentColor
       font-size 1rem
@@ -51,26 +66,30 @@
         display none
       @media (max-width: $MQMobileNarrow)
         display none
+  
+  h5
+  h6
+    color $accentColor
 
   h1
-    font-size 2.2rem
+    font-size 2.5rem
     margin 3rem 0 0
 
   h2
-    border-bottom 1px solid $borderColor
+    border-bottom $borderWidth solid $borderColor
     counter-increment page-h2
     counter-reset page-h3
-    font-size 1.65rem
-    padding-bottom .3rem
+    font-size 2rem
+    padding-bottom .3125rem
 
     &::before
       content counter(page-h2)
-      padding-bottom .3rem
+      padding-bottom .3125rem
 
   h3
     counter-increment page-h3
     counter-reset page-h4
-    font-size 1.35rem
+    font-size 1.75rem
 
     &::before
       content counter(page-h2) "." counter(page-h3)
@@ -78,12 +97,16 @@
   h4
     counter-increment page-h4
     counter-reset page-h5
+    font-size 1.5rem
 
     &::before
       content counter(page-h2) "." counter(page-h3) "." counter(page-h4)
 
-  h5, h6
-    color $accentColor
+  h5
+    font-size 1.125rem
+
+  h6
+    font-size 1rem
 
 @media print
   .page

@@ -1,13 +1,11 @@
-<template>
-  <span>{{ academicYear }}</span>
-</template>
-
 <script>
 export default {
-  created() {
-    this.academicYear = this.$themeConfig.data.academicYear;
+  render() {
+    const academicYear = this.$themeConfig.data.academicYear;
+    return this._v(this.noWrap ? academicYear : `(${academicYear})`);
+  },
+  props: {
+    noWrap: Boolean,
   },
 };
 </script>
-
-<style lang="stylus" scoped></style>

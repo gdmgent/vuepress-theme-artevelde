@@ -6,16 +6,16 @@
 <script>
 export default {
   created() {
-    this.programme = this.$themeConfig.organisation.programmes[
+    this.programme = this.$themeLocaleConfig.organisation.programmes[
       this.$themeConfig.data.programme
-    ][this.lang];
+    ];
   },
   props: {
-    lang: {
+    locale: {
       type: String,
-      default: "nl-BE",
+      default: null,
       validator(value) {
-        return ["en-GB", "nl-BE"].includes(value);
+        return [null, "/", "/en/"].includes(value);
       },
     },
     noLink: Boolean,

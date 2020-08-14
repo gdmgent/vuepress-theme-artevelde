@@ -365,6 +365,7 @@ module.exports = (options, ctx) => {
           after: () => "</ContainerBlock>\n",
         },
       ],
+      "@vuepress/last-updated",
       [
         "vuepress-plugin-mathjax",
         {

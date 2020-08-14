@@ -30,6 +30,10 @@ export default {
     list-style-type: none;
   }
 
+  li {
+    margin-top: 0;
+  }
+
   a {
     display: inline-block;
   }

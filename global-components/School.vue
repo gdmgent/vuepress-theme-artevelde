@@ -7,14 +7,14 @@
 <script>
 export default {
   created() {
-    this.school = this.$themeConfig.organisation.school[this.lang];
+    this.school = this.$themeLocaleConfig.organisation.school;
   },
   props: {
-    lang: {
+    locale: {
       type: String,
-      default: "nl-BE",
+      default: null,
       validator(value) {
-        return ["en-GB", "nl-BE"].includes(value);
+        return [null, "/", "/en/"].includes(value);
       },
     },
     logo: Boolean,

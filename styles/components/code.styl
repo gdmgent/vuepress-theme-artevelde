@@ -1,5 +1,5 @@
 {$contentClass}
-  code,
+  code
   pre
     font-family $fontFamilyCode
   code
@@ -43,15 +43,16 @@ div[class*="language-"]
     line-height 1.4
     .highlighted
       background-color rgba(0, 0, 0, 66%)
-  pre, pre[class*="language-"]
+  pre
+  pre[class*="language-"]
     background transparent
     position relative
     z-index 1
   &::before
     position absolute
     z-index 3
-    top 0.8em
-    right 1em
+    top .25em
+    right .5em
     font-size 0.75rem
     color rgba(255, 255, 255, 0.4)
   &:not(.line-numbers-mode)

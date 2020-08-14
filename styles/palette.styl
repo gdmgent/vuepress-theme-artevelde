@@ -6,16 +6,16 @@ $accentColor = $ahs-purple
 $textColor = $ahs-black
 $borderColor = #eaecef
 // $codeBgColor = #282c34
-$arrowBgColor = #ccc
+$arrowBgColor = lighten($ahs-purple, 50%)
 $badgeTipColor = $ahs-green
 $badgeWarningColor = $ahs-orange
 $badgeErrorColor = $ahs-red 
 
 // layout
 $navbarHeight ?= 3.5rem
-$sidebarWidth ?= 25rem
-$contentWidth ?= 70rem
-$homePageWidth ?= 70rem
+$sidebarWidth ?= 20rem
+$contentWidth ?= 60rem
+$homePageWidth ?= 60rem
 
 // responsive breakpoints
 // $MQNarrow ?= 959px
@@ -25,3 +25,5 @@ $homePageWidth ?= 70rem
 // code
 // $lineNumbersWrapperWidth ?= 3.5rem
 $codeLang ?= js ts html md vue css sass scss less stylus go java c sh yaml py docker dockerfile makefile
+
+$mobileSidebarWidth = $sidebarWidth * 0.85

@@ -1,6 +1,12 @@
 <template>
-  <span v-if="noLink">{{ $site.title }}</span>
-  <a v-else :href="canvasLink">{{ $site.title }}</a>
+  <span v-if="noLink">
+    {{ $site.title }}
+    <AcademicYear v-if="!noAcademicYear" />
+  </span>
+  <a v-else :href="canvasLink">
+    {{ $site.title }}
+    <AcademicYear v-if="!noAcademicYear" />
+  </a>
 </template>
 
 <script>
@@ -13,6 +19,7 @@ export default {
       : null;
   },
   props: {
+    noAcademicYear: Boolean,
     noLink: Boolean,
   },
 };

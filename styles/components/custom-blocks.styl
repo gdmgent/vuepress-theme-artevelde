@@ -1,31 +1,4 @@
 .custom-block
-  // .custom-block-title
-  //   font-weight 600
-  //   margin-bottom -0.4rem
-  &.tip, &.warning, &.danger
-    padding .1rem 1.5rem
-    border-left-width .5rem
-    border-left-style solid
-    margin 1rem 0
-  &.tip
-    background-color #f3f5f7
-    border-color #42b983
-  &.warning
-    background-color rgba(255,229,100,.3)
-    border-color darken(#ffe564, 35%)
-    color darken(#ffe564, 70%)
-    .custom-block-title
-      color darken(#ffe564, 50%)
-    a
-      color $textColor
-  &.danger
-    background-color #ffe6e6
-    border-color darken(red, 20%)
-    color darken(red, 70%)
-    .custom-block-title
-      color darken(red, 40%)
-    a
-      color $textColor
   &.details
     display block
     position relative
@@ -44,17 +17,11 @@
       cursor pointer
 
 .custom-block
-  // box-shadow 2px 2px 10px 0 rgba(0, 0, 0, .25)
-  // box-shadow 2px 2px 10px 0 currentColor
-  // .custom-block-title
-  //   font-size: 1.25rem
   &.-primary, &.-secondary, &.-info, &.-tip, &.-danger, &.-warning
     background-color var(--color-light, $ahs-black)
     border: 0 solid currentColor
-    border-left-width .5rem
+    border-left-width $borderWidth
     color var(--color)
-    // margin 1rem 0
-    // padding .1rem 1.5rem
     .custom-block-title
       color inherit
     a
@@ -92,7 +59,7 @@
     margin 1.25rem 0
     .custom-block-title
       color white
-      font-family 'Source Code Pro', monospace
+      font-family $fontFamilyCode
       font-size .75rem
       font-weight normal
       line-height 2

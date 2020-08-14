@@ -1,7 +1,8 @@
 <template functional>
-  <a class="btn" :href="props.href">
-    <IconBootstrap v-if="props.icon" :name="props.icon" />
+  <a :class="['btn', props.iconRight ? 'btn-right' : 'btn-left']" :href="props.href">
+    <IconBootstrap v-if="!props.iconRight && props.icon" :name="props.icon" />
     <slot />
+    <IconBootstrap v-if="props.iconRight && props.icon" :name="props.icon" />
   </a>
 </template>
 
@@ -15,6 +16,7 @@ export default {
       type: String,
       default: null,
     },
+    iconRight: Boolean,
   },
 };
 </script>
@@ -25,15 +27,26 @@ a.btn {
   border-radius: 0.25em;
   padding: 0.5rem 1rem;
 
-  svg:first-child {
-    padding-right: 0.5em;
-    vertical-align: middle;
-  }
-
   &:hover {
     color: white;
     background-color: var(--color, black);
     text-decoration: none !important;
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+
+  &.btn-left {
+    svg:first-child {
+      padding-right: 0.5rem;
+    }
+  }
+
+  &.btn-right {
+    svg:last-child {
+      padding-left: 0.5rem;
+    }
   }
 }
 </style>

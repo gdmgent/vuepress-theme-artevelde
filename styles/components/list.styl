@@ -1,7 +1,21 @@
+ol
+ul 
+  padding-left 1.2em
+  line-height 1.5
+  &:last-child
+    margin-bottom 0
+
 ul
   list-style-type square
-li::marker
-  color var(--color, $accentColor)
+  margin-top 1rem
+
+li
+  margin-top .5rem
+  &::marker
+    color var(--color, $accentColor)
+  > ul
+    margin-top 0
+
 dl
   > dd
     margin-left 1.75rem

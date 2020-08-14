@@ -1,19 +1,27 @@
 table
+  border-left $borderWidth solid $ahs-black
+  border-collapse collapse
+  line-height 1.75
+  margin 1rem 0
+  overflow-x: auto
   thead
     tr
       &:first-child
-        background-color rgba(0, 0, 0, .05)
-        border-bottom 2px solid rgba(0, 0, 0, .1)
-  tbody
-    tr
-      &:nth-child(2n)
         background-color rgba(0, 0, 0, .02)
-      &:nth-child(2n+1):last-child
-        border-bottom 1px dotted rgba(0, 0, 0,.1)
-  tr,
-  th,
-  td
-    border none
-  * + th,
-  * + td
-    border-left 1px dotted rgba(0, 0, 0,.1)
+      &:last-child
+        border-bottom 2px solid $accentColor
+  
+  tbody
+    tr:nth-child(2n)
+      background-color rgba(0, 0, 0, .02)
+
+  tr 
+    > * + *
+      border-left 1px solid rgba(0, 0, 0,.1)
+
+  th, td
+    padding .6em 1em
+    vertical-align top
+
+  img.emoji
+    --size 3em

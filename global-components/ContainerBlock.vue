@@ -74,7 +74,7 @@ export default {
           icon = "globe2";
           break;
         case "task":
-          icon = "pencil-square";
+          icon = "clipboard-check";
           break;
         case "tip":
           icon = "gift";
@@ -206,7 +206,7 @@ $iconOffset = 1rem;
 
 .custom-block {
   margin: 1rem 0;
-  padding: 0 0 1rem ($iconSize + 2 * $iconOffset);
+  padding: 0 2rem 1rem ($iconSize + 2 * $iconOffset);
   position: relative;
 
   p {

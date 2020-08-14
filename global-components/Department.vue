@@ -4,19 +4,17 @@
 
 <script>
 export default {
-  computed: {
-    department() {
-      return this.$themeConfig.organisation.departments[
-        this.$themeConfig.data.department
-      ][this.lang];
-    },
+  created() {
+    this.department = this.$themeLocaleConfig.organisation.departments[
+      this.$themeConfig.data.department
+    ];
   },
   props: {
-    lang: {
+    locale: {
       type: String,
-      default: "nl-BE",
+      default: null,
       validator(value) {
-        return ["en-GB", "nl-BE"].includes(value);
+        return [null, "/", "/en/"].includes(value);
       },
     },
   },

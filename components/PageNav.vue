@@ -1,36 +1,22 @@
 <template>
   <div v-if="prev || next" class="page-nav">
-    <p class="inner">
-      <span v-if="prev" class="prev">
-        ←
-        <a
-          v-if="prev.type === 'external'"
-          class="prev"
-          :href="prev.path"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {{ prev.title || prev.path }}
-          <OutboundLink />
-        </a>
-
-        <RouterLink v-else class="prev" :to="prev.path">{{ prev.title || prev.path }}</RouterLink>
-      </span>
-
-      <span v-if="next" class="next">
-        <a
-          v-if="next.type === 'external'"
-          :href="next.path"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {{ next.title || next.path }}
-          <OutboundLink />
-        </a>
-
-        <RouterLink v-else :to="next.path">{{ next.title || next.path }}</RouterLink>→
-      </span>
-    </p>
+    <div class="inner">
+      <Button
+        v-if="prev"
+        icon="arrow-left"
+        :href="prev.path"
+        target="_blank"
+        rel="noopener noreferrer"
+      >{{ prev.title || prev.path }}</Button>
+      <Button
+        v-if="next"
+        :href="next.path"
+        icon="arrow-right"
+        target="_blank"
+        rel="noopener noreferrer"
+        icon-right
+      >{{ next.title || next.path }}</Button>
+    </div>
   </div>
 </template>
 
@@ -127,19 +113,15 @@ function flatten(items, res) {
 
 .page-nav {
   @extend $wrapper;
-  padding-top: 1rem;
   padding-bottom: 0;
+  // padding-top: 1rem;
+  grid-row-start: navigation;
 
   .inner {
-    min-height: 2rem;
-    margin-top: 0;
     border-top: 1px solid $borderColor;
+    display: flex;
+    justify-content: space-between;
     padding-top: 1rem;
-    overflow: auto; // clear float
-  }
-
-  .next {
-    float: right;
   }
 }
 </style>

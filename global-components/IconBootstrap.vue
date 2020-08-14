@@ -15,6 +15,38 @@
   </svg>
 
   <svg
+    v-else-if="hasName('arrow-left')"
+    width="1em"
+    height="1em"
+    viewBox="0 0 16 16"
+    class="bi bi-arrow-left"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"
+    />
+    <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+  </svg>
+
+  <svg
+    v-else-if="hasName('arrow-right')"
+    width="1em"
+    height="1em"
+    viewBox="0 0 16 16"
+    class="bi bi-arrow-right"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"
+    />
+    <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z" />
+  </svg>
+
+  <svg
     v-else-if="hasName('book')"
     width="1em"
     height="1em"
@@ -173,6 +205,25 @@
     <path
       fill-rule="evenodd"
       d="M10.492 6.936a.438.438 0 0 1-.56.293.413.413 0 0 1-.274-.527c.08-.23.23-.44.477-.546a.891.891 0 0 1 .698.014c.387.16.72.545.924.997.428.948.392 2.377-.942 3.706a.446.446 0 0 1-.613.01.405.405 0 0 1-.011-.59c1.093-1.087 1.058-2.158.77-2.794-.152-.336-.354-.514-.469-.563zm-.034-.012h-.002.002z"
+    />
+  </svg>
+
+  <svg
+    v-else-if="hasName('clipboard-check')"
+    width="1em"
+    height="1em"
+    viewBox="0 0 16 16"
+    class="bi bi-clipboard-check"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"
+    />
+    <path
+      fill-rule="evenodd"
+      d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3zm4.354 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"
     />
   </svg>
 
@@ -456,6 +507,8 @@ export default {
       default: "bootstrap",
       validator(value) {
         return [
+          "arrow-left",
+          "arrow-right",
           "book",
           "bootstrap",
           "box",
@@ -465,6 +518,7 @@ export default {
           "caret-right-fill",
           "caret-up-fill",
           "chat-quote",
+          "clipboard-check",
           "download",
           "exclamation-circle",
           "exclamation-triangle",
