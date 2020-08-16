@@ -114,14 +114,23 @@ function flatten(items, res) {
 .page-nav {
   @extend $wrapper;
   padding-bottom: 0;
-  // padding-top: 1rem;
   grid-row-start: navigation;
 
   .inner {
     border-top: 1px solid $borderColor;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding-top: 1rem;
+
+    .btn-left {
+      grid-column-start: 1;
+      justify-self: start;
+    }
+
+    .btn-right {
+      grid-column-start: 2;
+      justify-self: end;
+    }
   }
 }
 </style>

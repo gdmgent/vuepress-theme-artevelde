@@ -17,9 +17,8 @@
   h6
     font-weight 600
     line-height 1.25
-    margin-top 0
+    margin 0 
     padding-top $navbarHeight
-    position relative
 
     {$contentClass}:not(.custom) > &
       margin-bottom 0
@@ -43,12 +42,18 @@
           text-decoration none
 
   a.header-anchor
-    float right
+    bottom 0
+    font-size 1.5rem
     opacity 0
+    position absolute
+    right 0
 
   h2
   h3
   h4
+  h5
+  h6
+    position relative
     &::before
       $margin = .5rem
       $size = (2 * $contentPadding - $margin)

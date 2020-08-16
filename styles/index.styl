@@ -4,7 +4,6 @@
 @require './components/code'
 @require './components/custom-blocks'
 @require './components/footnotes'
-@require './components/keyboard'
 @require './components/list'
 @require './components/page'
 @require './components/sidebar'
@@ -51,7 +50,7 @@ abbr[title]
     background-color var(--color, yellow)
 
 
-code, kbd, .line-number
+code
   font-family $fontFamilyCode
 
 hr
@@ -81,8 +80,8 @@ img
 
 mark
   background-color transparent
-  box-shadow inset 0 -0.3em 0 var(--color, yellow)
-  color var(--color-dark)
+  box-shadow inset 0 -0.3em 0 var(--markColor, yellow)
+  color var(--color-dark, black)
 
 p
   line-height 1.75

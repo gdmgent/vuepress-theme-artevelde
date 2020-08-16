@@ -182,4 +182,65 @@ export default {
 kbd[title] {
   cursor: help;
 }
+
+.key {
+  background-color: #f7f7f7;
+  border-color: #ccc;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 0.15rem;
+  border-bottom-width: 0.25rem;
+  color: #333;
+  display: inline-block;
+  font-family: $fontFamilyCode;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0.1em;
+  padding: 0.1em 0.5em;
+  position: relative;
+  text-transform: capitalize;
+  white-space: nowrap;
+
+  &.num {
+    background-color: #444;
+    border-color: #666;
+    border-bottom-color: #333;
+    color: #ddd;
+  }
+
+  &.-r {
+    color: rgb(240, 70, 37);
+  }
+
+  &.-y {
+    color: rgb(250, 199, 16);
+  }
+
+  &.-g {
+    color: rgb(143, 209, 79);
+  }
+
+  &.-c {
+    color: rgb(18, 205, 212);
+  }
+
+  &.-b {
+    color: rgb(45, 155, 240);
+  }
+
+  &.-m {
+    color: rgb(218, 0, 99);
+  }
+
+  abbr[title] {
+    cursor: help;
+    text-decoration-style: dotted;
+    text-decoration-color: #999;
+
+    &:hover {
+      background: inherit;
+    }
+  }
+}
 </style>
