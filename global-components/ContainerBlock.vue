@@ -236,4 +236,119 @@ svg.custom-block-icon {
   height: $iconSize;
   width: $iconSize;
 }
+
+.custom-block {
+  &.details {
+    display: block;
+    position: relative;
+    border-radius: 2px;
+    margin: 1.6em 0;
+    padding: 1.6em;
+    background-color: #eee;
+
+    h4 {
+      margin-top: 0;
+    }
+
+    figure, p {
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    summary {
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.custom-block {
+  &.-primary, &.-secondary, &.-info, &.-tip, &.-danger, &.-warning {
+    background-color: var(--color-light, $ahs-black);
+    border: 0 solid currentColor;
+    border-left-width: $borderWidth;
+    color: var(--color);
+
+    .custom-block-title {
+      color: inherit;
+    }
+
+    a {
+      color: var(--color-dark, darken($ahs-black, 20%));
+    }
+  }
+
+  &.-primary {
+    --color: $ahs-black;
+    --color-dark: lighten($ahs-black, 60%);
+    --color-light: lighten($ahs-black, 90%);
+  }
+
+  &.-secondary {
+    --color: lighten($ahs-black, 60%);
+    --color-dark: lighten($ahs-black, 40%);
+    --color-light: lighten($ahs-black, 90%);
+  }
+
+  &.-tip {
+    --color: $ahs-green;
+    --color-dark: darken($ahs-green, 30%);
+    --color-light: lighten($ahs-green, 90%);
+  }
+
+  &.-warning {
+    --color: $ahs-orange;
+    --color-dark: darken($ahs-orange, 20%);
+    --color-light: lighten($ahs-orange, 90%);
+  }
+
+  &.-danger {
+    --color: $ahs-red;
+    --color-dark: darken($ahs-red, 30%);
+    --color-light: lighten($ahs-red, 93%);
+  }
+
+  &.-info {
+    --color: $ahs-blue;
+    --color-dark: darken($ahs-blue, 30%);
+    --color-light: lighten($ahs-blue, 90%);
+  }
+
+  &.-file {
+    background-color: lighten($codeBgColor, 20%);
+    border: none;
+    border-radius: 6px;
+    box-shadow: none;
+    margin: 1.25rem 0;
+    padding: 0;
+
+    .custom-block-title {
+      color: white;
+      font-family: $fontFamilyCode;
+      font-size: 0.75rem;
+      font-weight: normal;
+      margin: 0;
+      opacity: 0.75;
+      padding: 0 0 0 2rem;
+
+      svg.custom-block-icon {
+        height: 0.75rem;
+        left: 0.75rem;
+        margin: auto;
+        top: 0.3125rem;
+        width: 0.75rem;
+      }
+    }
+
+    div[class*='language-']::before {
+      top: -1.125rem;
+    }
+
+    pre {
+      margin: 0;
+    }
+  }
+}
 </style>

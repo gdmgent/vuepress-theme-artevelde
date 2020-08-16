@@ -24,8 +24,9 @@ module.exports = (options, ctx) => {
       [
         "container",
         {
-          type: "file",
-          before: (info) => `<ContainerBlock info="${info} name="file">\n`,
+          type: "icon-file",
+          defaultTitle: "Bestand",
+          before: (info) => `<ContainerBlock info="${info}" name="file">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],
