@@ -10,14 +10,24 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .key-combo {
-  background-color: red;
-  color: #333;
-  background-color: #f7f7f7;
+  $bgColor = rgba(0, 0, 0, 0.1);
+  align-items: baseline;
+  background-color: $bgColor;
+  border-radius: 0.125rem;
+  box-shadow: 0 0.125rem 0 0.3125rem $bgColor;
+  display: inline-flex;
   font-family: $fontFamilyCode;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 0.1em 0.5em;
+  margin: 0 0.25rem;
+
+  > .char {
+    line-height: 1;
+    min-width: 1rem;
+    padding: 0.125rem;
+    position: relative;
+    text-align: center;
+    top: 0.1875rem;
+  }
 }
 </style>

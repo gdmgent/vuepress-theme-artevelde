@@ -10,12 +10,25 @@ export default {
   props: {
     type: {
       type: String,
-      default: "tip",
+      default: "default",
+      validator(value) {
+        return [
+          "default",
+          "error",
+          "green",
+          "orange",
+          "red",
+          "tip",
+          "warning",
+        ].includes(value);
+      },
     },
-    text: String,
     vertical: {
       type: String,
-      default: "top",
+      default: "baseline",
+      validator(value) {
+        return ["baseline", "bottom", "middle", "top"].includes(value);
+      },
     },
   },
 };
@@ -23,25 +36,25 @@ export default {
 
 <style lang="stylus" scoped>
 .badge {
-  background-color: #42b983;
-  border-radius: 3px;
+  background-color: $accentColor;
+  border-radius: 0.25rem;
   color: white;
   display: inline-block;
-  font-size: 14px;
-  height: 18px;
-  line-height: 18px;
-  padding: 0 6px;
+  font-size: 0.625rem;
+  height: 1.125rem;
+  line-height: 1.125rem;
+  padding: 0.0625rem 0.3125rem;
 
-  &.tip, &.green {
+  &.green, &.tip {
     background-color: $badgeTipColor;
   }
 
-  &.error {
-    background-color: $badgeErrorColor;
+  &.orange, &.warning {
+    background-color: $badgeWarningColor;
   }
 
-  &.warning, &.warn, &.yellow {
-    background-color: $badgeWarningColor;
+  &.red, &.error {
+    background-color: $badgeErrorColor;
   }
 
   & + & {

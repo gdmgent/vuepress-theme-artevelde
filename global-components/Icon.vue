@@ -1,11 +1,20 @@
 <template>
-  <i :class="['fa-fw', icon, style]" />
+  <i :class="['icon', styles]" />
 </template>
 
 <script>
 export default {
   created() {
     let icon = this.name.toLowerCase();
+    switch (icon) {
+      case "caret-down":
+      case "caret-left":
+      case "caret-right":
+      case "caret-up":
+        break;
+      default:
+        this.styles.push("fa-fw");
+    }
     switch (icon) {
       case "adobe":
       case "android":
@@ -19,13 +28,19 @@ export default {
       case "ubuntu":
       case "windows":
       case "youtube":
-        this.style = "fab";
+        this.styles.push("fab");
         break;
       default:
-        this.style = "fas";
+        this.styles.push("fas");
         break;
     }
-    this.icon = `fa-${icon}`;
+
+    this.styles.push(`fa-${icon}`);
+  },
+  data() {
+    return {
+      styles: [],
+    };
   },
   props: {
     name: {

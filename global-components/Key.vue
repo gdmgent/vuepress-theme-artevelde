@@ -1,5 +1,5 @@
 <template>
-  <kbd :class="['key', {'num': hasPositionNumeric()}]" :title="title">
+  <kbd :class="['key', {'num': hasPositionNumeric()}, `-${this.color}`]" :title="title">
     <Icon v-if="icon && !alternatePosition" class="key-icon" :name="icon" />
     <Char v-else-if="char && !alternatePosition" :name="char" />
     <abbr v-if="abbr" :title="title">{{ abbr }}</abbr>
@@ -69,6 +69,51 @@ export default {
         this.icon = "bars";
         this.text = null;
         this.title = "Menu";
+        break;
+      case "mouse left":
+        this.icon = "mouse";
+        this.text = '<abbr title="Left Mouse Button">LMB</abbr>';
+        this.title = "Left Mouse Button";
+        break;
+      case "mouse left drag":
+        this.icon = "mouse";
+        this.text = '<abbr title="Left Mouse Button">LMB</abbr> drag';
+        this.title = "Left Mouse Button";
+        break;
+      case "mouse middle":
+        this.icon = "mouse";
+        this.text = '<abbr title="Middle Mouse Button">MMB</abbr>';
+        this.title = "Middle Mouse Button";
+        break;
+      case "mouse middle drag":
+        this.icon = "mouse";
+        this.text = '<abbr title="Middle Mouse Button">MMB</abbr> drag';
+        this.title = "Middle Mouse Button";
+        break;
+      case "mouse right":
+        this.icon = "mouse";
+        this.text = '<abbr title="Right Mouse Button">RMB</abbr>';
+        this.title = "Right Mouse Button";
+        break;
+      case "mouse right drag":
+        this.icon = "mouse";
+        this.text = '<abbr title="Right Mouse Button">RMB</abbr> drag';
+        this.title = "Right Mouse Button";
+        break;
+      case "mouse wheel":
+        this.icon = "mouse";
+        this.text = "Wheel";
+        this.title = "Mouse Wheel";
+        break;
+      case "mouse wheel down":
+        this.icon = "mouse";
+        this.text = "Wheel down";
+        this.title = "Mouse Wheel down";
+        break;
+      case "mouse wheel up":
+        this.icon = "mouse";
+        this.text = "Wheel up";
+        this.title = "Mouse Wheel up";
         break;
       case "numeric lock":
         this.abbr = "Num Lock";
@@ -155,9 +200,17 @@ export default {
   props: {
     color: {
       type: String,
-      default: "dark",
+      default: "default",
       validator(value) {
-        return ["dark", "light"].includes(value);
+        return [
+          "blue",
+          "cyan",
+          "default",
+          "green",
+          "magenta",
+          "red",
+          "yellow",
+        ].includes(value);
       },
     },
     position: {
@@ -184,23 +237,42 @@ kbd[title] {
 }
 
 .key {
-  background-color: #f7f7f7;
-  border-color: #ccc;
-  border-radius: 0.25rem;
-  border-style: solid;
-  border-width: 0.15rem;
-  border-bottom-width: 0.25rem;
-  color: #333;
+  background-color: #444;
+  border-radius: 0.125rem;
+  box-shadow: 0px 1px 0 2px #666;
+  color: #ddd;
   display: inline-block;
   font-family: $fontFamilyCode;
-  font-size: 11px;
-  font-weight: bold;
-  line-height: 1.4;
-  margin: 0.1em;
-  padding: 0.1em 0.5em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 0 0.125rem;
+  min-width: 0.5rem;
+  padding: 0 0.5rem;
   position: relative;
+  text-align: center;
   text-transform: capitalize;
   white-space: nowrap;
+
+  &.key-alphanumeric {
+    --background: #444;
+    --shadow: #ccc;
+    --legend: #ddd;
+  }
+
+  &.key-control {
+  }
+
+  &.key-function {
+  }
+
+  &.key-modifier {
+  }
+
+  &.key-navigation {
+  }
+
+  &.key-numeric {
+  }
 
   &.num {
     background-color: #444;
@@ -209,27 +281,27 @@ kbd[title] {
     color: #ddd;
   }
 
-  &.-r {
+  &.-red {
     color: rgb(240, 70, 37);
   }
 
-  &.-y {
+  &.-yellow {
     color: rgb(250, 199, 16);
   }
 
-  &.-g {
+  &.-green {
     color: rgb(143, 209, 79);
   }
 
-  &.-c {
+  &.-cyan {
     color: rgb(18, 205, 212);
   }
 
-  &.-b {
+  &.-blue {
     color: rgb(45, 155, 240);
   }
 
-  &.-m {
+  &.-magenta {
     color: rgb(218, 0, 99);
   }
 
