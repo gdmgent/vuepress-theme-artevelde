@@ -19,6 +19,10 @@ export default {
       case "LONG LEFTWARDS ARROW":
         this.char = "&#x27F5;";
         break;
+      case "MULTIPLICATION SIGN":
+      case "times":
+        this.char = "&#xD7;";
+        break;
       case "OPTION KEY":
         this.char = "&#x2325;";
         break;
@@ -28,6 +32,12 @@ export default {
       case "PLUS SIGN":
       case "and":
         this.char = "&#x2B;";
+        break;
+      case "thrice":
+        this.char = "&#xD7;&#x2462;";
+        break;
+      case "twice":
+        this.char = "&#xD7;&#x2461;";
         break;
       case "UPWARDS WHITE ARROW":
         this.char = "&#x21E7;";
@@ -51,6 +61,7 @@ export default {
           "DOWNWARDS ARROW WITH CORNER LEFTWARDS",
           "LEFTWARDS ARROW TO BAR OVER RIGHTWARDS ARROW TO BAR",
           "LONG LEFTWARDS ARROW",
+          "MULTIPLICATION SIGN",
           "OPTION KEY",
           "PLACE OF INTEREST SIGN",
           "PLUS SIGN",
@@ -58,11 +69,12 @@ export default {
           "UPWARDS WHITE ARROW FROM BAR",
           "and",
           "next",
+          "times",
+          "thrice",
+          "twice",
         ].includes(value);
       },
     },
   },
 };
 </script>
-
-<style lang="stylus" scoped></style>
