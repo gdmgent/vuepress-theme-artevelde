@@ -1,9 +1,14 @@
-<template functional>
-  <a :class="['btn', props.iconRight ? 'btn-right' : 'btn-left']" :href="props.href">
-    <IconBootstrap v-if="!props.iconRight && props.icon" :name="props.icon" />
+<template>
+  <RouterLink
+    :class="['btn', iconRight ? 'btn-right' : 'btn-left']"
+    :to="href"
+    :exact="exact"
+    @focusout.native="focusoutAction"
+  >
+    <IconBootstrap v-if="!iconRight && icon" :name="icon" />
     <slot />
-    <IconBootstrap v-if="props.iconRight && props.icon" :name="props.icon" />
-  </a>
+    <IconBootstrap v-if="iconRight && icon" :name="icon" />
+  </RouterLink>
 </template>
 
 <script>

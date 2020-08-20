@@ -1,19 +1,11 @@
 <template>
   <div v-if="prev || next" class="page-nav">
     <div class="inner">
-      <Button
-        v-if="prev"
-        icon="arrow-left"
-        :href="prev.path"
-        target="_blank"
-        rel="noopener noreferrer"
-      >{{ prev.title || prev.path }}</Button>
+      <Button v-if="prev" icon="arrow-left" :href="prev.path">{{ prev.title || prev.path }}</Button>
       <Button
         v-if="next"
         :href="next.path"
         icon="arrow-right"
-        target="_blank"
-        rel="noopener noreferrer"
         icon-right
       >{{ next.title || next.path }}</Button>
     </div>
