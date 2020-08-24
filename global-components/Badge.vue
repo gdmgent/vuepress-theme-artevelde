@@ -1,7 +1,6 @@
-<template functional>
-  <span :class="['badge', props.type]" :style="{verticalAlign: props.vertical}">
+<template>
+  <span :class="['badge', type]" :style="{verticalAlign: vertical}">
     <slot />
-    {{ props.text }}
   </span>
 </template>
 

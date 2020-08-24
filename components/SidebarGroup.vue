@@ -1,21 +1,20 @@
 <template>
   <section
-    class="sidebar-group"
     :class="[
+      'sidebar-group',
+      `depth-${depth}`,
       {
         collapsable,
         'is-sub-group': depth !== 0
       },
-      `depth-${depth}`
     ]"
   >
     <RouterLink
       v-if="item.path"
-      class="sidebar-heading clickable"
-      :class="{
+      :class="['sidebar-heading clickable', {
         open,
         'active': isActive($route, item.path)
-      }"
+      }]"
       :to="item.path"
       @click.native="$emit('toggle')"
     >
@@ -31,10 +30,10 @@
     <DropdownTransition>
       <SidebarLinks
         v-if="open || !collapsable"
-        class="sidebar-group-items"
+        :depth="depth + 1"
         :items="item.children"
         :sidebar-depth="item.sidebarDepth"
-        :depth="depth + 1"
+        class="sidebar-group-items"
       />
     </DropdownTransition>
   </section>
@@ -70,19 +69,17 @@ export default {
 
   &:not(.collapsable) {
     .sidebar-heading:not(.clickable) {
-      cursor: auto;
       color: inherit;
+      cursor: auto;
     }
   }
 
-  // refine styles of nested sidebar groups
   &.is-sub-group {
     padding-left: 0;
 
     & > .sidebar-heading {
-      font-size: 0.95em;
-      line-height: 1.4;
       font-weight: normal;
+      line-height: 1.4;
       padding-left: 2rem;
 
       &:not(.clickable) {
@@ -94,7 +91,6 @@ export default {
       padding-left: 1rem;
 
       & > li > .sidebar-link {
-        font-size: 0.95em;
         border-left: none;
       }
     }
@@ -108,33 +104,31 @@ export default {
 }
 
 .sidebar-heading {
-  color: $textColor;
-  transition: color 0.15s ease;
-  cursor: pointer;
-  font-size: 1.1em;
-  font-weight: bold;
-  // text-transform uppercase
-  padding: 0.35rem 1.5rem 0.35rem 1.25rem;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0;
   border-left: 0.25rem solid transparent;
+  box-sizing: border-box;
+  color: $textColor;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0;
+  padding: 0.35rem 1.5rem 0.35rem 1.25rem;
+  transition: color 0.15s ease;
+  width: 100%;
 
   &.open, &:hover {
     color: inherit;
   }
 
   .arrow {
+    left: 0.5em;
     position: relative;
     top: -0.12em;
-    left: 0.5em;
   }
 
   &.clickable {
     &.active {
-      font-weight: 600;
-      color: $accentColor;
       border-left-color: $accentColor;
+      color: $accentColor;
+      font-weight: 600;
     }
 
     &:hover {
@@ -145,7 +139,6 @@ export default {
 
 .sidebar-group-items {
   transition: height 0.1s ease-out;
-  font-size: 0.95em;
   overflow: hidden;
 }
 </style>

@@ -1,9 +1,9 @@
-<template functional>
+<template>
   <div class="iframe-container">
     <iframe
-      :height="props.height"
-      :src="`https://www.youtube.com/embed/${props.video}?start=${props.start}&end=${props.end}&modestbranding=1`"
-      :width="props.width"
+      :height="height"
+      :src="`https://www.youtube.com/embed/${video}?start=${start}&end=${end}&modestbranding=1`"
+      :width="width"
       allowfullscreen
       frameborder="0"
     ></iframe>
@@ -14,6 +14,10 @@
 <script>
 export default {
   props: {
+    end: {
+      type: String,
+      default: "",
+    },
     height: {
       type: String,
       default: "360",
@@ -22,19 +26,13 @@ export default {
       type: String,
       default: "0",
     },
-    end: {
+    video: {
       type: String,
-      default: "",
     },
     width: {
       type: String,
       default: "640",
     },
-    video: {
-      type: String,
-    },
   },
 };
 </script>
-
-<style lang="stylus" scoped></style>

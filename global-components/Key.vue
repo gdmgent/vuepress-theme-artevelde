@@ -34,7 +34,7 @@ export default {
           this.title = "Mouse Wheel";
           break;
       }
-      this.area = "mouse";
+      this.areaClass = "mouse";
       this.icon = "mouse";
       this.text =
         this.text +

@@ -165,7 +165,6 @@ export default {
       type: String,
       default: "NULL",
       validator(value) {
-        console.log(value);
         return [
           "AMPERSAND",
           "APOSTROPHE",
