@@ -116,7 +116,7 @@ function renderExternal(h, to, text) {
 
 <style lang="stylus">
 .sidebar .sidebar-sub-headers {
-  font-size: 0.95em;
+  font-size: 0.9375em;
   padding-left: 1rem;
 }
 
@@ -125,7 +125,6 @@ a.sidebar-link {
   box-sizing: border-box;
   color: $textColor;
   display: inline-block;
-  font-size: 1em;
   font-weight: 400;
   line-height: 1.4;
   padding: 0.35rem 1rem 0.35rem 1.25rem;

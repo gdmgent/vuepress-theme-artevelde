@@ -4,14 +4,22 @@ VuePress theme for use at Artevelde University of Applied Sciences.
 
 ## Install
 
-    $ yarn add -D @gdmgent/vuepress-theme-artevelde
-
+    $ npm install --save @gdmgent/vuepress-theme-artevelde
 
 ## Development
 
-    $ yarn dev
-
+    $ npm run dev
 
 ### Publish to NPM
 
     $ npm publish --access public
+
+### Link Local
+
+In this repo:
+
+    $ npm link
+
+In the course repo:
+
+    $ npm link @artevelde/vuepress-theme-artevelde

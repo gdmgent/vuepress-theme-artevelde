@@ -96,9 +96,31 @@ export default {
     }
   }
 
+  &.depth-0 {
+    font-size: 1.125rem;
+
+    .sidebar-link {
+      font-size: 1rem;
+    }
+  }
+
+  &.depth-1 {
+    font-size: 1rem;
+
+    .sidebar-link {
+      font-size: 0.9375rem;
+    }
+  }
+
   &.depth-2 {
+    font-size: 0.9375rem;
+
     & > .sidebar-heading {
       border-left: none;
+    }
+
+    .sidebar-link {
+      font-size: 0.875rem;
     }
   }
 }
