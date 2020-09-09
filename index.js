@@ -62,7 +62,7 @@ module.exports = (options, ctx) => {
         "container",
         {
           type: "icon-apple",
-          defaultTitle: "App Store",
+          defaultTitle: "Apple",
           before: (info) => `<ContainerBlock info="${info}" name="apple">\n`,
           after: () => "</ContainerBlock>\n",
         },
