@@ -13,7 +13,7 @@
       rel="noopener noreferrer"
       target="_blank"
     >
-      <IconBootstrap name="pencil-square" />
+      <Icon name="pencil-square" />
     </a>
   </footer>
 </template>

@@ -16,18 +16,21 @@ export default {
   align-items: baseline;
   background-color: $bgColor;
   border-radius: 0.125rem;
-  box-shadow: 0 0.125rem 0 0.3125rem $bgColor;
+  box-shadow: 0 0.0625rem 0 0.3125rem $bgColor;
   display: inline-flex;
   font-family: $fontFamilyCode;
   margin: 0 0.25rem;
 
   > .char {
     line-height: 1;
-    min-width: 1rem;
-    padding: 0.125rem;
+    padding-left: 0.25rem;
     position: relative;
     text-align: center;
     top: 0.1875rem;
+
+    &:not(:last-child) {
+      padding-right: 0.25rem;
+    }
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <i :class="['fa-fw', 'fab', `fa-${name}`]" />
+  <i :class="['icon', 'fa-fw', 'fab', `fa-${name}`]" />
 </template>
 
 <script>
@@ -12,6 +12,7 @@ export default {
         return [
           "adobe",
           "android",
+          "app-store",
           "apple",
           "font-awesome",
           "github",
@@ -19,6 +20,7 @@ export default {
           "linux",
           "microsoft",
           "raspberry-pi",
+          "steam",
           "ubuntu",
           "windows",
           "youtube",
@@ -28,3 +30,5 @@ export default {
   },
 };
 </script>
+
+<style lang="stylus"></style>

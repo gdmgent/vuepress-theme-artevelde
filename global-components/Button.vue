@@ -5,9 +5,9 @@
     :exact="exact"
     @focusout.native="focusoutAction"
   >
-    <IconBootstrap v-if="!iconRight && icon" :name="icon" />
+    <Icon v-if="!iconRight && icon" :name="icon" />
     <slot />
-    <IconBootstrap v-if="iconRight && icon" :name="icon" />
+    <Icon v-if="iconRight && icon" :name="icon" />
   </RouterLink>
 </template>
 

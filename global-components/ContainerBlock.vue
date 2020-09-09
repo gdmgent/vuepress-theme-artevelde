@@ -1,8 +1,7 @@
 <template>
   <div :class="['custom-block', styles]">
     <p class="custom-block-title">
-      <IconFontAwesomeBrand v-if="isBrandName" class="custom-block-icon" :name="icon" />
-      <IconBootstrap v-else class="custom-block-icon" :name="icon" />
+      <Icon class="custom-block-icon" :name="icon" />
       <strong v-html="info" />
     </p>
     <slot />
@@ -12,22 +11,6 @@
 <script>
 export default {
   computed: {
-    isBrandName() {
-      return [
-        "adobe",
-        "android",
-        "apple",
-        "font-awesome",
-        "github",
-        "linkedin",
-        "linux",
-        "microsoft",
-        "raspberry-pi",
-        "ubuntu",
-        "windows",
-        "youtube",
-      ].includes(this.icon);
-    },
     icon() {
       let icon = null;
       switch (this.name) {
@@ -99,6 +82,7 @@ export default {
       switch (this.name) {
         case "adobe":
         case "android":
+        case "app-store":
         case "apple":
         case "blender":
         case "github":
@@ -108,6 +92,7 @@ export default {
         case "person":
         case "quote":
         case "raspbian":
+        case "steam":
         case "ubuntu":
         case "windows":
           styles.push("-icon");
@@ -164,6 +149,7 @@ export default {
         const isValid = [
           "adobe",
           "android",
+          "app-store",
           "apple",
           "bad",
           "blender",
@@ -183,6 +169,7 @@ export default {
           "remark",
           "see",
           "sources",
+          "steam",
           "task",
           "tip",
           "tree",

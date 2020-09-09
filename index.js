@@ -51,8 +51,18 @@ module.exports = (options, ctx) => {
       [
         "container",
         {
+          type: "icon-app-store",
+          defaultTitle: "App Store",
+          before: (info) =>
+            `<ContainerBlock info="${info}" name="app-store">\n`,
+          after: () => "</ContainerBlock>\n",
+        },
+      ],
+      [
+        "container",
+        {
           type: "icon-apple",
-          defaultTitle: "Apple",
+          defaultTitle: "App Store",
           before: (info) => `<ContainerBlock info="${info}" name="apple">\n`,
           after: () => "</ContainerBlock>\n",
         },
@@ -254,7 +264,7 @@ module.exports = (options, ctx) => {
       [
         "container",
         {
-          type: "icon-linux-ubuntu",
+          type: "icon-ubuntu",
           defaultTitle: "Ubuntu",
           before: (info) => `<ContainerBlock info="${info}" name="ubuntu">\n`,
           after: () => "</ContainerBlock>\n",
@@ -281,6 +291,15 @@ module.exports = (options, ctx) => {
             "/en/": "Referenced sources",
           },
           before: (info) => `<ContainerBlock info="${info}" name="sources">\n`,
+          after: () => "</ContainerBlock>\n",
+        },
+      ],
+      [
+        "container",
+        {
+          type: "icon-steam",
+          defaultTitle: "Steam",
+          before: (info) => `<ContainerBlock info="${info}" name="steam">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],

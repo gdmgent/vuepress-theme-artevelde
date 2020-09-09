@@ -12,7 +12,7 @@
         rel="noopener noreferrer"
         :title="canvasLabel"
       >
-        <IconBootstrap name="canvas" />
+        <Icon name="canvas" />
         <span>
           {{ canvasLabel }}
           <OutboundLink />

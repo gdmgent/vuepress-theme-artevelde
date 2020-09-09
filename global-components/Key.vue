@@ -73,25 +73,25 @@ export default {
           break;
         case "arrow down":
           this.areaClass = "navigation";
-          this.icon = "caret-down";
+          this.icon = "caret-down-fill";
           this.text = null;
           this.title = "Down Arrow";
           break;
         case "arrow left":
           this.areaClass = "navigation";
-          this.icon = "caret-left";
+          this.icon = "caret-left-fill";
           this.text = null;
           this.title = "Left Arrow";
           break;
         case "arrow right":
           this.areaClass = "navigation";
-          this.icon = "caret-right";
+          this.icon = "caret-right-fill";
           this.text = null;
           this.title = "Right Arrow";
           break;
         case "arrow up":
           this.areaClass = "navigation";
-          this.icon = "caret-up";
+          this.icon = "caret-up-fill";
           this.text = null;
           this.title = "Up Arrow";
           break;
@@ -218,7 +218,7 @@ export default {
           break;
         case "menu":
           this.areaClass = "system";
-          this.icon = "bars";
+          this.icon = "list";
           this.text = null;
           this.title = "Menu";
           break;
@@ -347,6 +347,7 @@ export default {
       abbr: null,
       alternateLocation: false,
       areaClass: null,
+      brand: null,
       char: null,
       icon: null,
       lowercase: null,
@@ -443,18 +444,19 @@ kbd[title] {
 }
 
 .key {
-  $faceColor = hsl(0, 0%, 27%);
+  $faceColor = lighten($ahs-black, 25%);
   background-color: var(--keycapFace, $faceColor);
   border-radius: 0.125rem;
   box-shadow: 0px 1px 0 2px var(--keycapSides, darken($faceColor, 20%));
   color: var(--keycapLegend, #ddd);
   display: inline-block;
   font-family: $fontFamilyCode;
-  font-size: 0.75rem;
-  font-weight: 600;
-  margin: 0 0.125rem;
-  min-width: 0.5rem;
-  padding: 0 0.5rem;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1.75;
+  margin: 0 0.125em;
+  min-width: 1em;
+  padding: 0 0.4375em;
   position: relative;
   text-align: center;
   text-transform: capitalize;
@@ -465,8 +467,7 @@ kbd[title] {
 
   &.-editing, &.-modifier, &.-system {
     $faceColor = $ahs-purple;
-    --keycapFace: $faceColor;
-    --keycapSides: darken($faceColor, 20%);
+    --keycapLegend: lighten(saturation($faceColor, 100%), 50%);
   }
 
   &.-function {
@@ -530,7 +531,7 @@ kbd[title] {
     color: yellow;
   }
 
-  abbr[title] {
+  >>> abbr[title] {
     cursor: help;
     text-decoration-style: dotted;
     text-decoration-color: #999;
