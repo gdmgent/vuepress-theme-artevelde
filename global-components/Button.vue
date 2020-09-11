@@ -1,20 +1,14 @@
 <template>
-  <RouterLink
-    :class="['btn', iconRight ? 'btn-right' : 'btn-left']"
-    :to="href"
-    :exact="exact"
-    @focusout.native="focusoutAction"
-  >
+  <a :class="['btn', iconRight ? 'btn-right' : 'btn-left']" :href="href">
     <Icon v-if="!iconRight && icon" :name="icon" />
     <slot />
     <Icon v-if="iconRight && icon" :name="icon" />
-  </RouterLink>
+  </a>
 </template>
 
 <script>
 export default {
   props: {
-    exact: Boolean,
     href: {
       type: String,
     },
