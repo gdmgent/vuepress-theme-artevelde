@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "commit": "git commit -a -m [WIP]",
-    "push": "git push",
     "publish-now": "npm publish --access public",
+    "push": "git push",
     "version-0.0.x": "npm version patch",
     "version-0.x.0": "npm version minor",
     "version-x.0.0": "npm version major"
