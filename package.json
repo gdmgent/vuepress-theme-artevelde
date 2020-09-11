@@ -8,7 +8,7 @@
     "bump-0.0.x": "npm version patch",
     "bump-0.x.0": "npm version minor",
     "bump-x.0.0": "npm version major",
-    "publish": "npm publish --access public && git push"
+    "publish-push": "npm publish --access public && git push"
   },
   "author": "Olivier Parent <olivier.parent@arteveldehs.be>",
   "license": "MIT",
