@@ -1,6 +1,6 @@
 {
   "name": "@artevelde/vuepress-theme-artevelde",
-  "version": "1.1.17",
+  "version": "1.2.0",
   "description": "VuePress theme for Artevelde University of Applied Sciences.",
   "main": "index.js",
   "scripts": {
