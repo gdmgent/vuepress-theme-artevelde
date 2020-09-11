@@ -4,7 +4,8 @@
   "description": "VuePress theme for Artevelde University of Applied Sciences.",
   "main": "index.js",
   "scripts": {
-    "publish": "npm publish --access public",
+    "commit": "git add . && git commit -m [wip]",
+    "publish-now": "npm publish --access public",
     "version-0.0.x": "npm version patch",
     "version-0.x.0": "npm version minor",
     "version-x.0.0": "npm version major"
