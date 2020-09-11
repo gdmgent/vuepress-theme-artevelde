@@ -1,16 +1,16 @@
-# VuePress theme Artevelde
+# VuePress Theme Artevelde
 
 VuePress theme for use at Artevelde University of Applied Sciences.
 
 ## Install
 
-In a VuePress project
+Install in a VuePress project.
 
     $ npm install --save @artevelde/vuepress-theme-artevelde
 
 ### Publish to NPM
 
-Run NPM scripts:
+Run NPM scripts in this exact order.
 
     1. `git-add-new`
     2. `git-commit`
@@ -19,10 +19,10 @@ Run NPM scripts:
 
 ### Link Local
 
-In this repo:
+Link in this local repo.
 
     $ npm link
 
-In the VuePress project repo:
+Link in the VuePress project local repo.
 
     $ npm link @artevelde/vuepress-theme-artevelde
