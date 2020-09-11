@@ -23,8 +23,10 @@ export default {
         case "android":
         case "app-store":
         case "apple":
+        case "bitbucket":
         case "font-awesome":
         case "github":
+        case "gitlab":
         case "linkedin":
         case "linux":
         case "microsoft":
