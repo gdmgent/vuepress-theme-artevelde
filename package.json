@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "commit": "git commit -a -m [WIP]",
-    "publish-now": "npm publish --access public",
-    "push": "git push",
-    "version-0.0.x": "npm version patch",
-    "version-0.x.0": "npm version minor",
-    "version-x.0.0": "npm version major"
+    "npm bump 0.0.x": "npm version patch",
+    "npm bump 0.x.0": "npm version minor",
+    "npm bump x.0.0": "npm version major",
+    "publish": "npm publish --access public && git push"
   },
   "author": "Olivier Parent <olivier.parent@arteveldehs.be>",
   "license": "MIT",
