@@ -1,6 +1,6 @@
 # VuePress Theme Artevelde
 
-VuePress theme for use at Artevelde University of Applied Sciences.
+VuePress theme for use at Artevelde University of Applied Sciences, based on https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/theme-default.
 
 ## Install
 
