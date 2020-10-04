@@ -21,10 +21,12 @@ export default {
           "linkedin",
           "linux",
           "microsoft",
+          "npm",
           "raspberry-pi",
           "steam",
           "ubuntu",
           "windows",
+          "yarn",
           "youtube",
         ].includes(value);
       },

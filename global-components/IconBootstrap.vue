@@ -29,7 +29,6 @@ export default {
           "book",
           "bootstrap",
           "box",
-          "canvas", // Unofficial
           "caret-down-fill",
           "caret-left-fill",
           "caret-right-fill",

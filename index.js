@@ -234,6 +234,15 @@ module.exports = (options, ctx) => {
       [
         "container",
         {
+          type: "icon-npm",
+          defaultTitle: "npm",
+          before: (info) => `<ContainerBlock info="${info}" name="npm">\n`,
+          after: () => "</ContainerBlock>\n",
+        },
+      ],
+      [
+        "container",
+        {
           type: "icon-person",
           defaultTitle: "John/Jane Doe",
           before: (info) => `<ContainerBlock info="${info}" name="person">\n`,
@@ -352,6 +361,15 @@ module.exports = (options, ctx) => {
           defaultTitle: "LinkedIn Learning",
           before: (info) =>
             `<ContainerBlock info="${info}" name="linkedin-learning">\n`,
+          after: () => "</ContainerBlock>\n",
+        },
+      ],
+      [
+        "container",
+        {
+          type: "icon-yarn",
+          defaultTitle: "Yarn",
+          before: (info) => `<ContainerBlock info="${info}" name="yarn">\n`,
           after: () => "</ContainerBlock>\n",
         },
       ],

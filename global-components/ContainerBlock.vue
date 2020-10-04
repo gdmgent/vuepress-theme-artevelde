@@ -89,12 +89,14 @@ export default {
         case "linux":
         case "microsoft":
         case "mouse":
+        case "npm":
         case "person":
         case "quote":
         case "raspbian":
         case "steam":
         case "ubuntu":
         case "windows":
+        case "yarn":
           styles.push("-icon");
           styles.push("-primary");
           break;
@@ -163,6 +165,7 @@ export default {
           "linux",
           "microsoft",
           "mouse",
+          "npm",
           "person",
           "quote",
           "raspbian",
@@ -177,6 +180,7 @@ export default {
           "video",
           "warning",
           "windows",
+          "yarn",
           "youtube",
         ].includes(value);
         if (!isValid) console.error(value);

@@ -30,10 +30,12 @@ export default {
         case "linkedin":
         case "linux":
         case "microsoft":
+        case "npm":
         case "raspberry-pi":
         case "steam":
         case "ubuntu":
         case "windows":
+        case "yarn":
         case "youtube":
           isTrue = true;
           break;
