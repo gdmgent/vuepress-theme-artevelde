@@ -141,7 +141,8 @@ a.sidebar-link {
   }
 
   .sidebar-group & {
-    padding-left: 2rem;
+    padding-left: 3.5rem;
+    text-indent: -1.5rem;
   }
 
   .sidebar-sub-headers & {
