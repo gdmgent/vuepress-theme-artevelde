@@ -6,7 +6,7 @@ VuePress theme for use at Artevelde University of Applied Sciences, based on htt
 
 Install in a VuePress project.
 
-    $ npm install --save @artevelde/vuepress-theme-artevelde
+    $ npm add @artevelde/vuepress-theme-artevelde
 
 ### Publish to NPM
 
