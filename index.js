@@ -444,6 +444,7 @@ module.exports = (options, ctx) => {
             "\\milli": "\\rm{m}",
             "\\minutes": "^{\\prime}",
             "\\nano": "\\rm{n}",
+            "\\newton": "\\rm{N}",
             "\\ohm": "\\rm{\\Omega}",
             "\\pebi": "\\rm{Pi}",
             "\\peta": "\\rm{P}",
