@@ -34,6 +34,7 @@ export default {
           "caret-right-fill",
           "caret-up-fill",
           "chat-quote",
+          "check2",
           "clipboard-check",
           "download",
           "exclamation-circle",
@@ -52,6 +53,7 @@ export default {
           "people",
           "question-circle",
           "star",
+          "x",
         ].includes(value);
       },
     },

@@ -15,7 +15,7 @@
   "author": "Olivier Parent <olivier.parent@arteveldehs.be>",
   "license": "MIT",
   "dependencies": {
-    "bootstrap-icons": "^1.0.0"
+    "bootstrap-icons": "^1.1.0"
   },
   "devDependencies": {},
   "repository": {
