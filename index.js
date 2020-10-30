@@ -429,6 +429,7 @@ module.exports = (options, ctx) => {
             "\\gram": "\\rm{g}",
             "\\hecto": "\\rm{h}",
             "\\hertz": "\\rm{Hz}",
+            "\\hour": "\\rm{h}",
             "\\inch": "^{\\prime\\prime}",
             "\\joule": "\\rm{J}",
             "\\kelvin": "\\rm{K}",
