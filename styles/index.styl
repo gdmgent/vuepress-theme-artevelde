@@ -15,7 +15,7 @@
   font-size 16px
 
 ::selection
-  background yellow
+  background-color yellow
   color black
 
 html
@@ -46,11 +46,12 @@ em
 abbr[title]
   cursor help
   &:hover
-    background-color var(--color, yellow)
-
+    background-color yellow
+    color black
 
 code
   font-family $fontFamilyCode
+  white-space nowrap
 
 hr
   border 0
@@ -138,8 +139,6 @@ p
       padding-left 0
 
 @require 'mobile.styl'
-
-
 
 @media print
   :root
