@@ -126,15 +126,6 @@ module.exports = (options, ctx) => {
       [
         "container",
         {
-          type: "icon-adobe",
-          defaultTitle: "Adobe",
-          before: (info) => `<ContainerBlock info="${info}" name="adobe">\n`,
-          after: () => "</ContainerBlock>\n",
-        },
-      ],
-      [
-        "container",
-        {
           type: "icon-android",
           defaultTitle: "Android",
           before: (info) => `<ContainerBlock info="${info}" name="android">\n`,
