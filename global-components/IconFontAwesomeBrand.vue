@@ -10,7 +10,6 @@ export default {
       default: "font-awesome",
       validator(value) {
         return [
-          "adobe",
           "android",
           "app-store",
           "apple",
@@ -22,6 +21,7 @@ export default {
           "linux",
           "microsoft",
           "npm",
+          "pinterest",
           "raspberry-pi",
           "steam",
           "ubuntu",

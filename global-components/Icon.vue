@@ -19,7 +19,6 @@ export default {
     isFontAwesomeBrand() {
       let isTrue = false;
       switch (this.name) {
-        case "adobe":
         case "android":
         case "app-store":
         case "apple":
@@ -32,6 +31,7 @@ export default {
         case "microsoft":
         case "npm":
         case "raspberry-pi":
+        case "pinterest":
         case "steam":
         case "ubuntu":
         case "windows":
