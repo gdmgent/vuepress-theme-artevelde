@@ -6,16 +6,16 @@ VuePress theme for use at Artevelde University of Applied Sciences, based on htt
 
 Install in a VuePress project.
 
-    $ npm add @artevelde/vuepress-theme-artevelde
+    $ npm add -D @artevelde/vuepress-theme-artevelde
 
 ### Publish to NPM
 
 Run NPM scripts in this exact order.
 
-    1. `git-add-new`
-    2. `git-commit`
-    3. `version-bump-0.0.x` (or one of the others)
-    4. `publish-push`
+    1. `npm run git:add-new`
+    2. `npm run git:commit`
+    3. `npm run npm:version-0.0.x` (or one of the others)
+    4. `npm run npm:publish-push`
 
 ### Link Local
 

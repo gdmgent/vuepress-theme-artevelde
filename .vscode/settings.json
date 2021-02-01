@@ -1,13 +1,13 @@
 {
   "files.exclude": {
-    ".gitignore": false,
-    ".npmignore": false,
-    ".vscode": false,
-    "**/node_modules": false,
-    "index.js": false,
-    "LICENSE": false,
-    "noopModule.js": false,
-    "util": false
+    ".gitignore": true,
+    ".npmignore": true,
+    ".vscode": true,
+    "**/node_modules": true,
+    "index.js": true,
+    "LICENSE": true,
+    "noopModule.js": true,
+    "util": true
   },
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#9b7dd2",
