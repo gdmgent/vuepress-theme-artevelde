@@ -490,43 +490,43 @@ kbd[title] {
   &.-red {
     $faceColor = $ahs-red;
     --keycapFace: $faceColor;
-    --keycapSides: darken($faceColor, 20%);
     --keycapLegend: lighten($faceColor, 80%);
+    --keycapSides: darken($faceColor, 20%);
   }
 
   &.-yellow {
     $faceColor = rgb(250, 199, 16);
     --keycapFace: darken($faceColor, 30%);
-    --keycapSides: darken($faceColor, 60%);
     --keycapLegend: lighten($faceColor, 80%);
+    --keycapSides: darken($faceColor, 60%);
   }
 
   &.-green {
     $faceColor = $ahs-green;
     --keycapFace: $faceColor;
-    --keycapSides: darken($faceColor, 20%);
     --keycapLegend: lighten($faceColor, 80%);
+    --keycapSides: darken($faceColor, 20%);
   }
 
   &.-cyan {
     $faceColor = rgb(18, 205, 212);
     --keycapFace: darken($faceColor, 30%);
-    --keycapSides: darken($faceColor, 60%);
     --keycapLegend: lighten($faceColor, 80%);
+    --keycapSides: darken($faceColor, 60%);
   }
 
   &.-blue {
     $faceColor = $ahs-blue;
     --keycapFace: $faceColor;
-    --keycapSides: darken($faceColor, 20%);
     --keycapLegend: lighten($faceColor, 80%);
+    --keycapSides: darken($faceColor, 20%);
   }
 
   &.-magenta {
     $faceColor = rgb(218, 0, 99);
     --keycapFace: darken($faceColor, 30%);
-    --keycapSides: darken($faceColor, 60%);
     --keycapLegend: lighten($faceColor, 80%);
+    --keycapSides: darken($faceColor, 60%);
   }
 
   &.-lowercase {
@@ -534,19 +534,19 @@ kbd[title] {
   }
 
   >>> .action {
-    margin-left: 0.5rem;
-    font-weight: normal;
     color: yellow;
+    font-weight: normal;
+    margin-left: 0.5rem;
   }
 
   >>> abbr[title] {
+    color: inherit;
     cursor: help;
-    text-decoration-style: dotted;
     text-decoration-color: #999;
+    text-decoration-style: dotted;
 
     &:hover {
       background: inherit;
-      color: inherit;
     }
   }
 }
