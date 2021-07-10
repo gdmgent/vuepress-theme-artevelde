@@ -1,5 +1,13 @@
 <template>
-  <kbd :class="['key', {'-lowercase': lowercase }, getAreaClass(), getColorClass()]" :title="title">
+  <kbd
+    :class="[
+      'key',
+      { '-lowercase': lowercase },
+      getAreaClass(),
+      getColorClass(),
+    ]"
+    :title="title"
+  >
     <Icon v-if="icon && !alternateLocation" class="key-icon" :name="icon" />
     <Char v-else-if="char && !alternateLocation" :name="char" />
     <abbr v-if="abbr" :title="title">{{ abbr }}</abbr>
@@ -538,6 +546,7 @@ kbd[title] {
 
     &:hover {
       background: inherit;
+      color: inherit;
     }
   }
 }
