@@ -38,6 +38,8 @@ import Navbar from "@theme/components/Navbar.vue";
 import Page from "@theme/components/Page.vue";
 import Sidebar from "@theme/components/Sidebar.vue";
 
+const urlSearchParams = new URLSearchParams(window.location.search);
+
 export default {
   name: "Layout",
 
@@ -58,7 +60,7 @@ export default {
     shouldShowNavbar() {
       const { themeConfig } = this.$site;
       const { frontmatter } = this.$page;
-      if (frontmatter.navbar === false || themeConfig.navbar === false) {
+      if (frontmatter.navbar === false || themeConfig.navbar === false || urlSearchParams.get("navbar") === "false" || urlSearchParams.get("bars") === "false") {
         return false;
       }
       return (
@@ -72,6 +74,9 @@ export default {
 
     shouldShowSidebar() {
       const { frontmatter } = this.$page;
+      if (urlSearchParams.get("sidebar") === "false" || urlSearchParams.get("bars") === "false") {
+        return false;
+      }
       return (
         !frontmatter.home &&
         frontmatter.sidebar !== false &&

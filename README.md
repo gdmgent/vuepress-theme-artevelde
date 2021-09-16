@@ -26,3 +26,21 @@ Link in this local repo.
 Link in the VuePress project local repo.
 
     $ npm link @artevelde/vuepress-theme-artevelde
+
+### Query Params
+
+Hide both **NavBar** and **SideBar**
+
+    ?bars=false
+
+Hide both **NavBar** and **SideBar**
+
+    ?navbar=false&sidebar=false
+
+Hide **NavBar**
+
+    ?navbar=false
+
+Hide **SideBar**
+
+    ?sidebar=false
