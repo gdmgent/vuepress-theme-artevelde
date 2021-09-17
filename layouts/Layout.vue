@@ -5,11 +5,11 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
+    <Navbar v-if="!isNavbarHidden && shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
 
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
-    <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
+    <Sidebar v-if="!isSidebarHidden && shouldShowSidebar" :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <template #top>
         <slot name="sidebar-top" />
       </template>
@@ -38,8 +38,6 @@ import Navbar from "@theme/components/Navbar.vue";
 import Page from "@theme/components/Page.vue";
 import Sidebar from "@theme/components/Sidebar.vue";
 
-const urlSearchParams = new URLSearchParams(window.location.search);
-
 export default {
   name: "Layout",
 
@@ -52,6 +50,8 @@ export default {
 
   data() {
     return {
+      isNavbarHidden: false,
+      isSidebarHidden: false,
       isSidebarOpen: false,
     };
   },
@@ -60,7 +60,7 @@ export default {
     shouldShowNavbar() {
       const { themeConfig } = this.$site;
       const { frontmatter } = this.$page;
-      if (frontmatter.navbar === false || themeConfig.navbar === false || urlSearchParams.get("navbar") === "false" || urlSearchParams.get("bars") === "false") {
+      if (frontmatter.navbar === false || themeConfig.navbar === false) {
         return false;
       }
       return (
@@ -74,9 +74,6 @@ export default {
 
     shouldShowSidebar() {
       const { frontmatter } = this.$page;
-      if (urlSearchParams.get("sidebar") === "false" || urlSearchParams.get("bars") === "false") {
-        return false;
-      }
       return (
         !frontmatter.home &&
         frontmatter.sidebar !== false &&
@@ -134,6 +131,9 @@ export default {
   },
 
   mounted() {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    this.isNavbarHidden = (urlSearchParams.get("bars") === "false") || (urlSearchParams.get("navbar") === "false");
+    this.isSidebarHidden = (urlSearchParams.get("bars") === "false") || (urlSearchParams.get("sidebar") === "false");
     this.$router.afterEach(() => {
       this.isSidebarOpen = false;
     });
