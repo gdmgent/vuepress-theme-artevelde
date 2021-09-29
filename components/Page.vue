@@ -30,7 +30,7 @@ export default {
 @css {
   .page {
     column-gap: 2rem;
-    grid-template-columns: [col-start] minmax(var(--sidebarWidth), 1fr) [content-start] minmax(auto, 60rem) [content-end] 1fr [col-end];
+    grid-template-columns: [col-start] minmax(var(--sidebarWidth), 1fr) [content-start] minmax(0, 60rem) [content-end] 1fr [col-end];
     grid-template-rows: [row-start] auto [navigation] minmax(auto, 4rem) [footer] 4rem [row-end];
   }
 }
@@ -46,7 +46,7 @@ export default {
 @media (max-width: $MQMobile) {
 @css {
   .page {
-    grid-template-columns: [col-start] 0 [content-start] minmax(auto, 60rem) [content-end] 0 [col-end];
+    grid-template-columns: [col-start] 0 [content-start] minmax(0, 60rem) [content-end] 0 [col-end];
   }
 }
 }
