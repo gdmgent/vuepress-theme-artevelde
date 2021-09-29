@@ -67,6 +67,7 @@ export default {
   h4+h5,
   h5+h6 {
     padding-top 1rem
+    scroll-margin-top $navbarHeight
   }
 }
 
