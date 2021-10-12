@@ -152,7 +152,7 @@ export default {
       case "VERTICAL LINE":
       case "or":
         hex = "7C"
-        break
+        break;
       case "NULL":
       default:
         hex = "0";
