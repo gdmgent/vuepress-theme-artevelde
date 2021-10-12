@@ -149,6 +149,10 @@ export default {
       case "twice":
         hex = ["D7", "2461"];
         break;
+      case "VERTICAL LINE":
+      case "or":
+        hex = "7C"
+        break
       case "NULL":
       default:
         hex = "0";
@@ -207,6 +211,7 @@ export default {
           "SUPERSCRIPT TWO",
           "UPWARDS WHITE ARROW FROM BAR",
           "UPWARDS WHITE ARROW",
+          "VERTICAL LINE",
           "agrave",
           "amp",
           "and",
@@ -222,6 +227,7 @@ export default {
           "micro",
           "minus",
           "next",
+          "or",
           "period",
           "quot",
           "section",
