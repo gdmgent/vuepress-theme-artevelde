@@ -32,15 +32,18 @@ export default {
         hex = "2C";
         break;
       case "DOLLAR SIGN":
+      case "dollar":
         hex = "24";
         break;
       case "DOWNWARDS ARROW WITH CORNER LEFTWARDS":
         hex = "21B5";
         break;
       case "EQUALS SIGN":
+      case "equals":
         hex = "3D";
         break;
       case "EXCLAMATION MARK":
+      case "exclamation":
         hex = "21";
         break;
       case "FULL STOP":
@@ -151,7 +154,7 @@ export default {
         break;
       case "VERTICAL LINE":
       case "or":
-        hex = "7C"
+        hex = "7C";
         break;
       case "NULL":
       default:
