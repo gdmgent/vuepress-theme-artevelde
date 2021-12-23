@@ -15,7 +15,7 @@
     "yarn:version-0.0.x": "yarn version --patch",
     "yarn:version-0.x.0": "yarn version --minor",
     "yarn:version-x.0.0": "yarn version --major",
-    "npm:publish-push": "npm publish --access public && git push"
+    "yarn:publish-push": "yarn publish && git push"
   },
   "author": "Olivier Parent <olivier.parent@arteveldehs.be>",
   "license": "MIT",
