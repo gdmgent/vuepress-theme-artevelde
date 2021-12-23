@@ -1,6 +1,6 @@
 {
   "name": "@artevelde/vuepress-theme-artevelde",
-  "version": "1.12.0",
+  "version": "1.11.1",
   "description": "VuePress theme for Artevelde University of Applied Sciences.",
   "main": "index.js",
   "scripts": {
@@ -12,9 +12,9 @@
     "yarn:outdated": "yarn outdated || cd . ",
     "yarn:update": "yarn upgrade-interactive --latest",
     "yarn:version": "yarn version",
-    "npm:version-0.0.x": "npm version patch",
-    "npm:version-0.x.0": "npm version minor",
-    "npm:version-x.0.0": "npm version major",
+    "yarn:version-0.0.x": "yarn version --patch",
+    "yarn:version-0.x.0": "yarn version --minor",
+    "yarn:version-x.0.0": "yarn version --major",
     "npm:publish-push": "npm publish --access public && git push"
   },
   "author": "Olivier Parent <olivier.parent@arteveldehs.be>",
