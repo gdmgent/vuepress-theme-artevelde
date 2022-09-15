@@ -21,7 +21,7 @@ export default {};
   margin: 0 0.25rem;
   padding: 0 0.5rem;
 
-  >>> > .char {
+  ::v-deep > .char {
     line-height: 1;
     min-width: 1rem;
     padding: 0.125rem;

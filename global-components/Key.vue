@@ -533,13 +533,13 @@ kbd[title] {
     text-transform: lowercase;
   }
 
-  >>> .action {
+  ::v-deep .action {
     color: yellow;
     font-weight: normal;
     margin-left: 0.5rem;
   }
 
-  >>> abbr[title] {
+  ::v-deep abbr[title] {
     color: inherit;
     cursor: help;
     text-decoration-color: #999;
