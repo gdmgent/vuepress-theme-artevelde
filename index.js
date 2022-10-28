@@ -200,6 +200,18 @@ module.exports = (options, ctx) => {
       [
         "container",
         {
+          type: "icon-example",
+          defaultTitle: {
+            "/": "Voorbeeld",
+            "/en/": "Example",
+          },
+          before: (info) => `<ContainerBlock info="${info}" name="example">\n`,
+          after: () => "</ContainerBlock>\n",
+        },
+      ],
+      [
+        "container",
+        {
           type: "icon-info",
           defaultTitle: "Info",
           before: (info) => `<ContainerBlock info="${info}" name="info">\n`,

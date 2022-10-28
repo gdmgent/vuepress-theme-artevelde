@@ -26,6 +26,9 @@ export default {
         case "definition":
           icon = "star";
           break;
+        case "example":
+          icon = "hand-index";
+          break;
         case "good":
           icon = "hand-thumbs-up";
           break;
@@ -106,6 +109,7 @@ export default {
           styles.push("-icon");
           break;
         case "definition":
+        case "example":
         case "info":
         case "linkedin-learning":
         case "video":
@@ -156,6 +160,7 @@ export default {
           "bad",
           "blender",
           "definition",
+          "example",
           "file",
           "github",
           "good",
