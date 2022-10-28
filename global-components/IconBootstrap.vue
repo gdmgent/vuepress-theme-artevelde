@@ -57,6 +57,7 @@ export default {
           "folder2-open",
           "gift",
           "globe2",
+          "hand-index",
           "hand-thumbs-down",
           "hand-thumbs-up",
           "info-circle",
